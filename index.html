@@ -116,6 +116,21 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/%E5%88%86%E7%B1%BB/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
@@ -148,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -162,7 +177,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">hexo图片加载问题</a>
+            <a href="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">hexo图片加载问题</a>
         </h2>
 
         <div class="post-meta">
@@ -173,7 +188,16 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-24 16:52:15 / Modified: 17:03:48" itemprop="dateCreated datePublished" datetime="2023-09-24T16:52:15+08:00">2023-09-24</time>
+              <time title="Created: 2023-09-26 14:47:41 / Modified: 14:50:33" itemprop="dateCreated datePublished" datetime="2023-09-26T14:47:41+08:00">2023-09-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">hexo博客搭建问题</span></a>
+                </span>
             </span>
 
           
@@ -188,22 +212,22 @@
 
       
           <h1 id="1-开启post-asset-floder选项"><a href="#1-开启post-asset-floder选项" class="headerlink" title="1. 开启post_asset_floder选项"></a>1. 开启post_asset_floder选项</h1><p>在blog的根目录下，打开整个博客的配置文件，_config.yml，把其中的post_asset_floder选项改为true。</p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161033586.png" alt="image-20230924161033586"></p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161147016.png" alt="image-20230924161147016"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161033586.png" alt="image-20230924161033586"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161147016.png" alt="image-20230924161147016"></p>
 <p>​	<strong>资源文件夹</strong> (post_asset_folder) 是 Hexo 的一项功能。 具体使用方式是在 _config.yml 中修改: post_asset_folder: true 这样子修改之后，当你使用 hexo new 命令创建文件的时候，会生成一个和你的文章同名的文件夹，里面可以放一些资源文件。</p>
 <p>在后面的处理中，我们需要将我们的图片文件放到我们博客的.md的同名文件夹下。（这里先暂时不管有什么意义，因为毕竟一般不用new来创建新的.md文件）</p>
 <h1 id="2-更改typora图片的存储格式"><a href="#2-更改typora图片的存储格式" class="headerlink" title="2. 更改typora图片的存储格式"></a>2. 更改typora图片的存储格式</h1><p>​	在之前的使用中，写markdown文件时，我一般都是直接将图片粘贴过来，使用的是markdown存储图片的默认格式。在默认的模式中，我们粘贴到markdown文件中的图片都会先保存到typora的默认存储位置，然后通过引用标签和图片绝对路径来显示在markdown文件中。这样有两个坏处，</p>
 <p>​	一是存储位置默认在C盘，容易吃系统盘的空间。二是图片文件和markdown文件分离，相隔较远，不容易管理，一旦图片移动，就容易加载不出来，特别是在博客中，当我们将markdown文件上传，当然是访问不到的。</p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924162913600.png" alt="image-20230924162913600"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924162913600.png" alt="image-20230924162913600"></p>
 <p>因此，我们可以在typora的图像设置中设置成如上图所示，保存图片的文件夹就用同名文件夹，别改，有坑！！！</p>
 <p>这也算是前面将post_asset_floder改为true的原因之一，我们可以将自己写的markdown文件和装有图片的同名文件夹放到_post文件夹下，当我们使用hexo g命令时，便可以将图片和markdown文件传到public文件夹下（根据markdown生成的html文件和其中的图片资源），如果文件夹与对应的markdown文件不同名，图片是传不过去的，更别说访问到图片了，这里搞了我一个小时才发现，血泪教训啊。</p>
 <h1 id="3-安装hexo-asset-img插件"><a href="#3-安装hexo-asset-img插件" class="headerlink" title="3. 安装hexo-asset-img插件"></a>3. 安装hexo-asset-img插件</h1><p>当我们把markdown文件和同名的图片文件夹放到_post文件夹下，并执行hexo clean 和 hexo g命令后，查看public下的文件</p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924163952781.png" alt="image-20230924163952781"></p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164100527.png" alt="image-20230924164100527"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924163952781.png" alt="image-20230924163952781"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164100527.png" alt="image-20230924164100527"></p>
 <p>可以看到，对应的html文件和图片也都生成了，但是依然看不到图片，为什么呢？查看网页源代码，</p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164255431.png" alt="image-20230924164255431"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164255431.png" alt="image-20230924164255431"></p>
 <p>可以看到，图片的访问路径是有问题的，html文件和img文件是在同一个文件夹下，但是访问路径却还是markdown文件中的访问路径，多了前面的test-md，将其删去，</p>
-<p><img src="/2023/09/24/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164510519.png" alt="image-20230924164510519"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164510519.png" alt="image-20230924164510519"></p>
 <p>成功了。</p>
 <p>因此，我们需要hexo-asset-img插件来帮助我们将图片的访问路径正确转换。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
@@ -251,9 +275,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-24 15:19:48 / Modified: 17:04:23" itemprop="dateCreated datePublished" datetime="2023-09-24T15:19:48+08:00">2023-09-24</time>
+              <time title="Created: 2023-09-24 15:19:48" itemprop="dateCreated datePublished" datetime="2023-09-24T15:19:48+08:00">2023-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-26 14:54:39" itemprop="dateModified" datetime="2023-09-26T14:54:39+08:00">2023-09-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Spring学习</span></a>
+                </span>
             </span>
 
           
@@ -446,9 +485,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-24 14:54:18 / Modified: 17:04:07" itemprop="dateCreated datePublished" datetime="2023-09-24T14:54:18+08:00">2023-09-24</time>
+              <time title="Created: 2023-09-24 14:54:18" itemprop="dateCreated datePublished" datetime="2023-09-24T14:54:18+08:00">2023-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-26 14:52:31" itemprop="dateModified" datetime="2023-09-26T14:52:31+08:00">2023-09-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">HTML学习</span></a>
+                </span>
             </span>
 
           
@@ -585,8 +639,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-24 17:04:48" itemprop="dateModified" datetime="2023-09-24T17:04:48+08:00">2023-09-24</time>
+                <time title="Modified: 2023-09-26 14:56:52" itemprop="dateModified" datetime="2023-09-26T14:56:52+08:00">2023-09-26</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%BB%84%E5%A4%8D%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">计组复习</span></a>
+                </span>
+            </span>
 
           
 
@@ -904,6 +967,18 @@
           <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/%E5%88%86%E7%B1%BB/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
