@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="here is yuanmouensis313&#39;s blog">
@@ -102,6 +102,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -128,7 +129,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/%E5%88%86%E7%B1%BB/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -136,11 +137,38 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -186,10 +214,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-26 14:47:41 / Modified: 14:50:33" itemprop="dateCreated datePublished" datetime="2023-09-26T14:47:41+08:00">2023-09-26</time>
+              <time title="Created: 2023-09-26 14:47:41" itemprop="dateCreated datePublished" datetime="2023-09-26T14:47:41+08:00">2023-09-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-10-05 10:48:07" itemprop="dateModified" datetime="2023-10-05T10:48:07+08:00">2023-10-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -214,26 +248,14 @@
           <h1 id="1-开启post-asset-floder选项"><a href="#1-开启post-asset-floder选项" class="headerlink" title="1. 开启post_asset_floder选项"></a>1. 开启post_asset_floder选项</h1><p>在blog的根目录下，打开整个博客的配置文件，_config.yml，把其中的post_asset_floder选项改为true。</p>
 <p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161033586.png" alt="image-20230924161033586"></p>
 <p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161147016.png" alt="image-20230924161147016"></p>
-<p>​	<strong>资源文件夹</strong> (post_asset_folder) 是 Hexo 的一项功能。 具体使用方式是在 _config.yml 中修改: post_asset_folder: true 这样子修改之后，当你使用 hexo new 命令创建文件的时候，会生成一个和你的文章同名的文件夹，里面可以放一些资源文件。</p>
-<p>在后面的处理中，我们需要将我们的图片文件放到我们博客的.md的同名文件夹下。（这里先暂时不管有什么意义，因为毕竟一般不用new来创建新的.md文件）</p>
-<h1 id="2-更改typora图片的存储格式"><a href="#2-更改typora图片的存储格式" class="headerlink" title="2. 更改typora图片的存储格式"></a>2. 更改typora图片的存储格式</h1><p>​	在之前的使用中，写markdown文件时，我一般都是直接将图片粘贴过来，使用的是markdown存储图片的默认格式。在默认的模式中，我们粘贴到markdown文件中的图片都会先保存到typora的默认存储位置，然后通过引用标签和图片绝对路径来显示在markdown文件中。这样有两个坏处，</p>
-<p>​	一是存储位置默认在C盘，容易吃系统盘的空间。二是图片文件和markdown文件分离，相隔较远，不容易管理，一旦图片移动，就容易加载不出来，特别是在博客中，当我们将markdown文件上传，当然是访问不到的。</p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924162913600.png" alt="image-20230924162913600"></p>
-<p>因此，我们可以在typora的图像设置中设置成如上图所示，保存图片的文件夹就用同名文件夹，别改，有坑！！！</p>
-<p>这也算是前面将post_asset_floder改为true的原因之一，我们可以将自己写的markdown文件和装有图片的同名文件夹放到_post文件夹下，当我们使用hexo g命令时，便可以将图片和markdown文件传到public文件夹下（根据markdown生成的html文件和其中的图片资源），如果文件夹与对应的markdown文件不同名，图片是传不过去的，更别说访问到图片了，这里搞了我一个小时才发现，血泪教训啊。</p>
-<h1 id="3-安装hexo-asset-img插件"><a href="#3-安装hexo-asset-img插件" class="headerlink" title="3. 安装hexo-asset-img插件"></a>3. 安装hexo-asset-img插件</h1><p>当我们把markdown文件和同名的图片文件夹放到_post文件夹下，并执行hexo clean 和 hexo g命令后，查看public下的文件</p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924163952781.png" alt="image-20230924163952781"></p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164100527.png" alt="image-20230924164100527"></p>
-<p>可以看到，对应的html文件和图片也都生成了，但是依然看不到图片，为什么呢？查看网页源代码，</p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164255431.png" alt="image-20230924164255431"></p>
-<p>可以看到，图片的访问路径是有问题的，html文件和img文件是在同一个文件夹下，但是访问路径却还是markdown文件中的访问路径，多了前面的test-md，将其删去，</p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164510519.png" alt="image-20230924164510519"></p>
-<p>成功了。</p>
-<p>因此，我们需要hexo-asset-img插件来帮助我们将图片的访问路径正确转换。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-
-<p>使用以上命令，安装，完成后在重新打包和部署页面，网页正常了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -283,7 +305,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-26 14:54:39" itemprop="dateModified" datetime="2023-09-26T14:54:39+08:00">2023-09-26</time>
+                <time title="Modified: 2023-10-05 10:48:43" itemprop="dateModified" datetime="2023-10-05T10:48:43+08:00">2023-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -313,137 +335,14 @@
 <li>控制反转（IOC）和面向切面编程（AOP）</li>
 <li>支持对事务的处理、对框架整合的支持</li>
 </ul>
-<h3 id="2-spring的组成"><a href="#2-spring的组成" class="headerlink" title="2. spring的组成"></a>2. spring的组成</h3><p><img src="/2023/09/24/spring/image-20230703141900747.png" alt="image-20230703141900747"></p>
-<p>主要有七大模块组成，基本上是一个大杂烩，各种东西的整合，核心是 Spring core</p>
-<h3 id="3-Spring拓展"><a href="#3-Spring拓展" class="headerlink" title="3. Spring拓展"></a>3. Spring拓展</h3><ul>
-<li>Spring boot：构建一切<ul>
-<li>约定大于配置</li>
-<li>简单配置便可以搭建起一个微服务</li>
-</ul>
-</li>
-<li>Spring Cloud：协调一切</li>
-<li>Spring Cloud Data Flow：连接一切</li>
-</ul>
-<p>由于Spring不断发展，整合的框架越来越多，导致冗杂，配置地狱，使用Spring Boot解决这个问题，因此学习Spring boot前先学习Spring和Spring MVC作为基础</p>
-<h3 id="4-IOC创建对象的方式"><a href="#4-IOC创建对象的方式" class="headerlink" title="4. IOC创建对象的方式"></a>4. IOC创建对象的方式</h3><ul>
-<li>无参构造构建对象，默认方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//new User这个对象时便默认使用这个无参构造方法</span></span><br><span class="line">        System.out.println(<span class="string">&quot;User的无参构造&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;name=&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">ApplicationContext</span> <span class="variable">applicationContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;beans.xml&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> (User) applicationContext.getBean(<span class="string">&quot;user&quot;</span>);</span><br><span class="line">        user.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>有参构造构建对象</p>
-<p>1.下标赋值</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    第一种方式，使用默认的无参构造</span></span><br><span class="line"><span class="comment">//    public User()&#123;</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;User的无参构造&quot;);</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    第二种方式，使用构造器构造</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;name=&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第一种方式，使用默认参数构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第二种方式，有参构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    1，使用下标--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy构造器构造&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​	2.通过类型进行创建，有可能多个参数是同一种类型，不推荐使用</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    第一种方式，使用默认的无参构造</span></span><br><span class="line"><span class="comment">//    public User()&#123;</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;User的无参构造&quot;);</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    第二种方式，使用构造器构造</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;name=&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第一种方式，使用默认参数构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第二种方式，使用构造器构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    1，使用下标--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;constructor-arg index=&quot;0&quot; value=&quot;ajnuy构造器构造&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    2，使用参数类型--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">type</span>=<span class="string">&quot;java.lang.String&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy构造器构造，使用参数类型&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>​	3.使用参数的名称构造在，重点掌握</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    String name;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    第一种方式，使用默认的无参构造</span></span><br><span class="line"><span class="comment">//    public User()&#123;</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;User的无参构造&quot;);</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    第二种方式，使用构造器构造</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;name=&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第一种方式，使用默认参数构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    第二种方式，使用构造器构造--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    1，使用下标--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;constructor-arg index=&quot;0&quot; value=&quot;ajnuy构造器构造&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    2，使用参数类型--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;ajnuy构造器构造，使用参数类型&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    3，使用参数的名称构造--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        注意，这里和无参构造是不同的，一个是用的构造器构造（有参），另一个使用的是默认的property标签进行构造--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy，使用属性的名称构造&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>总结，所有放在bean容器中管理的对象，在一开始加载的时候便已经被new出来了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">ApplicationContext</span> <span class="variable">applicationContext</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;beans.xml&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p>也就是这个时候</p>
-<h3 id="5-spring配置"><a href="#5-spring配置" class="headerlink" title="5. spring配置"></a>5. spring配置</h3><h4 id="1-别名"><a href="#1-别名" class="headerlink" title="1. 别名"></a>1. 别名</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    给用户创建一个别名，可以使用别名来创建对象--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;userNickName&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-bean的配置"><a href="#2-bean的配置" class="headerlink" title="2. bean的配置"></a>2. bean的配置</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">id:对象初始化创建后的具体名称</span></span><br><span class="line"><span class="comment">class:对象对应的具体的类的地址</span></span><br><span class="line"><span class="comment">name:可以为每个初始化的对象取多个别名</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">name</span>=<span class="string">&quot;user2 u2 u&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;bean构造测试&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="3-import导入"><a href="#3-import导入" class="headerlink" title="3. import导入"></a>3. import导入</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;beans.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;beans2.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">&quot;beans3.xml&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在团队开放中，可以将不同成员写的bean配置文件合并为一个</p>
-<h3 id="6-依赖注入"><a href="#6-依赖注入" class="headerlink" title="6. 依赖注入"></a>6. 依赖注入</h3><h4 id="1-构造器注入（前面所讲的构造器）"><a href="#1-构造器注入（前面所讲的构造器）" class="headerlink" title="1. 构造器注入（前面所讲的构造器）"></a>1. 构造器注入（前面所讲的构造器）</h4><h4 id="2-set注入（重点）"><a href="#2-set注入（重点）" class="headerlink" title="2. set注入（重点）"></a>2. set注入（重点）</h4><ul>
-<li>依赖注入<ul>
-<li>依赖：bean对象的创建依赖于容器</li>
-<li>注入：bean对象的所有属性，通过容器来注入</li>
-</ul>
-</li>
-</ul>
-<p>【环境搭建】</p>
-<p>1.复杂类型</p>
-<p>2.真实测试对象</p>
-<p>八种真实的注入类型</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;address&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.Address&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;student&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.Student&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        第一种，普通值的注入，value--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第二种，对象的注入，ref--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;address&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;address&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第三种，数组的注入，array--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;books&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>三体<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>哈利波特<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>三国演义<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>水浒传<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第四种，列表的注入，list--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;hobbies&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>唱<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>跳<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>rap<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>篮球<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第五种，map的注入，map--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">map</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">&quot;身份证&quot;</span> <span class="attr">value</span>=<span class="string">&quot;111111222223631411&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">&quot;银行卡&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1468464131314861321&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第六种，set的注入，set--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;games&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">set</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>PUBG<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>BF<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>COD<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">value</span>&gt;</span>APEX<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">set</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第七种，null的注入，null--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;wife&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">null</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--        第八种，property的注入，props--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;info&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">props</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;driver&quot;</span>&gt;</span>3231<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;url&quot;</span>&gt;</span>www.da.com<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;user&quot;</span>&gt;</span>root<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">prop</span> <span class="attr">key</span>=<span class="string">&quot;password&quot;</span>&gt;</span>root<span class="tag">&lt;/<span class="name">prop</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">props</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="3-p命名空间"><a href="#3-p命名空间" class="headerlink" title="3. p命名空间"></a>3. p命名空间</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:p</span>=<span class="string">&quot;http://www.springframework.org/schema/p&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;age&quot; value=&quot;20&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    与上述写法相同，简化写法--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;ajnuy&quot;</span> <span class="attr">p:age</span>=<span class="string">&quot;20&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>重点要引入xml的约束</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:p=&quot;http://www.springframework.org/schema/p&quot;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-c命名空间"><a href="#4-c命名空间" class="headerlink" title="4. c命名空间"></a>4. c命名空间</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:p</span>=<span class="string">&quot;http://www.springframework.org/schema/p&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:c</span>=<span class="string">&quot;http://www.springframework.org/schema/c&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;property name=&quot;age&quot; value=&quot;20&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    与上述写法相同，简化写法--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">p:name</span>=<span class="string">&quot;ajnuy&quot;</span> <span class="attr">p:age</span>=<span class="string">&quot;20&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    &lt;bean id=&quot;user2&quot; class=&quot;com.pojo.User&quot;&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;constructor-arg name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        &lt;constructor-arg name=&quot;age&quot; value=&quot;23&quot;/&gt;--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;/bean&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    与上述写法相同，简化写法--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">c:name</span>=<span class="string">&quot;AJNUY&quot;</span> <span class="attr">c:age</span>=<span class="string">&quot;20&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>重点还是引入约束</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlns:c=&quot;http://www.springframework.org/schema/c&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="7-bean的作用域（scope）"><a href="#7-bean的作用域（scope）" class="headerlink" title="7. bean的作用域（scope）"></a>7. bean的作用域（scope）</h3><h4 id="1-单例模式（默认机制）"><a href="#1-单例模式（默认机制）" class="headerlink" title="1. 单例模式（默认机制）"></a>1. 单例模式（默认机制）</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">c:name</span>=<span class="string">&quot;AJNUY&quot;</span> <span class="attr">c:age</span>=<span class="string">&quot;20&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;singleton&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>所有getBean()拿到的对象是同一个对象</p>
-<h4 id="2-原型对象"><a href="#2-原型对象" class="headerlink" title="2. 原型对象"></a>2. 原型对象</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;user2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.User&quot;</span> <span class="attr">c:name</span>=<span class="string">&quot;AJNUY&quot;</span> <span class="attr">c:age</span>=<span class="string">&quot;20&quot;</span> <span class="attr">scope</span>=<span class="string">&quot;prototype&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>每次通过getBean()拿到的对象都是不同的</p>
-<h4 id="3-其他"><a href="#3-其他" class="headerlink" title="3. 其他"></a>3. 其他</h4><p>request, session, application，均用于web开发中</p>
-<h3 id="8-bean的自动装配（autowire）"><a href="#8-bean的自动装配（autowire）" class="headerlink" title="8. bean的自动装配（autowire）"></a>8. bean的自动装配（autowire）</h3><ul>
-<li>spring可以使用自动装配来满足bean的依赖要求</li>
-<li>spring会在上下文中自动寻找，并且自动地给bean配置属性</li>
-</ul>
-<h4 id="1-spring的三种装配方式"><a href="#1-spring的三种装配方式" class="headerlink" title="1. spring的三种装配方式"></a>1. spring的三种装配方式</h4><ul>
-<li>xml中显式配置（一般常用）</li>
-<li>java中显式配置</li>
-<li>隐式的自动配置bean</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.Cat&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;dog&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.Dog&quot;</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">    byName:会在容器的上下文中（此处为people容器）寻找，和自己的属性名称相同的bean（people的两个属性为cat和dog，因此会装配id为cat和dog的两个bean），</span></span><br><span class="line"><span class="comment">    实现自动装配</span></span><br><span class="line"><span class="comment">    byType:会在容器的上下文中（此处为people容器）寻找，和自己的属性名称相同的bean（people的两个属性类型为Cat和Dog，因此会装配class为Cat和Dog的两个bean），</span></span><br><span class="line"><span class="comment">    实现自动装配</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;people&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.pojo.People&quot;</span> <span class="attr">autowire</span>=<span class="string">&quot;byType&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">value</span>=<span class="string">&quot;ajnuy&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><em>注意：使用byName时要保证所有的bean的id唯一，且id要和对应的属性名称一致；使用byType时要保证所有bean的class唯一，且class要和对应的属性类型一致</em></p>
-<h4 id="2-使用注解自动装配"><a href="#2-使用注解自动装配" class="headerlink" title="2. 使用注解自动装配"></a>2. 使用注解自动装配</h4><p>使用注解的要求：</p>
-<ol>
-<li>导入约束：context约束</li>
-<li>配置依赖</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context 					  		</span></span></span><br><span class="line"><span class="string"><span class="tag">        http://www.springframework.org/schema/context/spring-context.xsd&quot;</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">    <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="1-Autowired"><a href="#1-Autowired" class="headerlink" title="1. @Autowired"></a>1. @Autowired</h5><p>可以直接在属性上使用，亦可以在set方法上使用</p>
-<p>使用@Autowired后可以不用写set方法了，但是该属性应该已经提前在容器中存在了，且要符合名字</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">People</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Cat cat;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Dog dog;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Cat <span class="title function_">getCat</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> cat;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Autowired</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setCat</span><span class="params">(Cat cat)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.cat = cat;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    @Autowired</span></span><br><span class="line">    <span class="keyword">public</span> Dog <span class="title function_">getDog</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> dog;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setDog</span><span class="params">(Dog dog)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.dog = dog;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;People&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, cat=&quot;</span> + cat +</span><br><span class="line">                <span class="string">&quot;, dog=&quot;</span> + dog +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果装配的环境比较复杂，使用单一的@Autowired无法完成时，可以使用@Qualifier(value&#x3D;”某个bean的id”)进行配置，以指定一个唯一的bean容器</p>
-<p>补充：@Nullable：打上该注解，表明该字段可以为空</p>
-<h3 id="9-使用注解开发"><a href="#9-使用注解开发" class="headerlink" title="9. 使用注解开发"></a>9. 使用注解开发</h3><h4 id="1-Autowired和-Qualifier-value-x3D-”xxx”"><a href="#1-Autowired和-Qualifier-value-x3D-”xxx”" class="headerlink" title="1. @Autowired和@Qualifier(value&#x3D;”xxx”)"></a>1. @Autowired和@Qualifier(value&#x3D;”xxx”)</h4><p>上面已经详细讲述，此处不多赘述</p>
-<h4 id="2-Nullable"><a href="#2-Nullable" class="headerlink" title="2. @Nullable"></a>2. @Nullable</h4><p>表示某个字段可以为空</p>
-<h4 id="3-Component"><a href="#3-Component" class="headerlink" title="3. @Component"></a>3. @Component</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.pojo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="comment">//相当于&lt;bean id=&quot;user&quot; class=&quot;com.pojo.User&quot;/&gt;</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    等价于&lt;property name=&quot;name&quot; value=&quot;ajnuy&quot;/&gt;</span></span><br><span class="line">    <span class="meta">@Value(&quot;ajnuy&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>一般使用在具体的实体类中，加上该注解会让spring进行自动装载到容器中</p>
-<p>但是要提前在xml文件中加上</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    自动扫描指定包，查看是否存在组件，若是存在，便加入bean进行管理--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">&quot;com.pojo&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>@Component的几个衍生注解:采用MVC三层架构</p>
-<ul>
-<li>dao：@Repository</li>
-<li>service：@Service</li>
-<li>controller：@Controller</li>
-</ul>
-<p>四个注解（加上@Component）的功能是一样的，都是将某个类注册到spring中，并进行装配</p>
-<h4 id="4-singleton-“xxx”"><a href="#4-singleton-“xxx”" class="headerlink" title="4. @singleton(“xxx”)"></a>4. @singleton(“xxx”)</h4><p>相当于scope&#x3D;”singleton”</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/24/spring/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -493,7 +392,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-26 14:52:31" itemprop="dateModified" datetime="2023-09-26T14:52:31+08:00">2023-09-26</time>
+                <time title="Modified: 2023-10-05 10:48:31" itemprop="dateModified" datetime="2023-10-05T10:48:31+08:00">2023-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -517,79 +416,14 @@
 
       
           <h3 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图像的地址（相对或绝对地址）&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;图片未显示的时候的代替文字&quot;</span> <span class="attr">title</span>=<span class="string">&quot;鼠标悬停在图片上的标签&quot;</span> <span class="attr">width</span>=<span class="string">&quot;&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="链接标签"><a href="#链接标签" class="headerlink" title="链接标签"></a>链接标签</h3><h4 id="一般链接"><a href="#一般链接" class="headerlink" title="一般链接"></a>一般链接</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;调转的目标页面地址&quot;</span> <span class="attr">target</span>=<span class="string">&quot;表示窗口在哪里打开：_self（本窗口）/_blank（新窗口）&quot;</span>&gt;</span>作为超链接的文字或图片<span class="tag">&lt;<span class="name">a</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#锚点的标签名&quot;</span>&gt;</span>回到锚点<span class="tag">&lt;<span class="name">a</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">&quot;作为锚点的标签名&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="功能性链接"><a href="#功能性链接" class="headerlink" title="功能性链接"></a>功能性链接</h4><ul>
-<li>邮件链接</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;mailto:邮件地址&quot;</span>&gt;</span>联系我<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="行内元素和块元素"><a href="#行内元素和块元素" class="headerlink" title="行内元素和块元素"></a>行内元素和块元素</h3><ul>
-<li>块元素：每个元素占一行，例如：img, p, h1-6…</li>
-<li>行内元素：所有元素在一行，例如：a,strong,em…</li>
-</ul>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li>有序列表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2023/09/24/HTML%E5%AD%A6%E4%B9%A0/image-20230628204755424.png" alt="image-20230628204755424"></p>
-<ul>
-<li>无序列表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2023/09/24/HTML%E5%AD%A6%E4%B9%A0/image-20230628204854042.png" alt="image-20230628204854042"></p>
-<ul>
-<li>自定义</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2023/09/24/HTML%E5%AD%A6%E4%B9%A0/image-20230628204944302.png" alt="image-20230628204944302"></p>
-<p><img src="/2023/09/24/HTML%E5%AD%A6%E4%B9%A0/image-20230628205007404.png" alt="image-20230628205007404"></p>
-<h3 id="结构分析"><a href="#结构分析" class="headerlink" title="结构分析"></a>结构分析</h3><ul>
-<li>heade：头部</li>
-<li>footer：脚注</li>
-<li>section：主体</li>
-<li>article：文章</li>
-<li>aside：侧边栏</li>
-<li>nac：导航</li>
-</ul>
-<h3 id="内联标签"><a href="#内联标签" class="headerlink" title="内联标签"></a>内联标签</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ifram</span> <span class="attr">src</span>=<span class="string">&quot;path&quot;</span> <span class="attr">name</span>=<span class="string">&quot;标签名称(可以用链接标签跳转，把一个新的页面嵌入到当前页面中)&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ifram</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="表单语法"><a href="#表单语法" class="headerlink" title="表单语法"></a>表单语法</h3><h4 id="form表单："><a href="#form表单：" class="headerlink" title="form表单："></a>form表单：</h4><p>作为整个表单的基本框架，其他的输入全部放在form表单中</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;表单提交的位置，可以是一个网站，也可以是一个请求处理地址&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post/get&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;&quot;</span> <span class="attr">name</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>两种提交方法：</p>
-<ul>
-<li>get：可以在url看见提交的信息，不太安全，但是高效</li>
-<li>post:不在url处提交信息，可以传输大文件</li>
-</ul>
-<h4 id="input标签："><a href="#input标签：" class="headerlink" title="input标签："></a>input标签：</h4><p>作为输入，属性有</p>
-<ul>
-<li>type：必填，指定元素的类型，有text, password（也是一种按钮，自带提交功能）, checkbox, radio, submit, reset, file, hidden, image, button, 默认为text</li>
-<li>name：必填，表单元素的名称，后台处理以此为标识</li>
-<li>value：选填，初始值，但是ratio类型必须填</li>
-<li>size：元素大小</li>
-<li>maxlength：最大输入长度</li>
-<li>checked：CheckBox和radio中，按钮是否选中</li>
-</ul>
-<h4 id="下拉框标签："><a href="#下拉框标签：" class="headerlink" title="下拉框标签："></a>下拉框标签：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;city&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;cd&quot;</span>&gt;</span>成都<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;xa&quot;</span> <span class="attr">selected</span>&gt;</span>西安<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;cq&quot;</span>&gt;</span>重庆<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;sh&quot;</span>&gt;</span>上海<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/24/HTML%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -639,7 +473,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-09-26 14:56:52" itemprop="dateModified" datetime="2023-09-26T14:56:52+08:00">2023-09-26</time>
+                <time title="Modified: 2023-10-05 10:49:01" itemprop="dateModified" datetime="2023-10-05T10:49:01+08:00">2023-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -669,151 +503,19 @@
 <li>I&#x2F;O</li>
 </ul>
 <h4 id="3）计量单位"><a href="#3）计量单位" class="headerlink" title="3）计量单位"></a>3）计量单位</h4><ul>
-<li><p>K M G T P E Z Y（10到80，2）</p>
-</li>
-<li><p>1MHz &#x3D; 1 000 000 Hz</p>
-</li>
-<li><p>1KB &#x3D; 1024 bytes 1MB 1GB</p>
-</li>
-<li><p>m μ n p f a z y（-3到-24）</p>
-</li>
+<li>K M G T P E Z Y（10到80，2）</li>
+<li>1MHz &#x3D; 1 000 000 Hz</li>
+<li>1KB &#x3D; 1024 bytes 1MB 1GB</li>
+<li>m μ n p f a z y（-3到-24）</li>
 </ul>
-<hr>
-<h3 id="1-3-计算机系统实例"><a href="#1-3-计算机系统实例" class="headerlink" title="1.3 计算机系统实例"></a>1.3 计算机系统实例</h3><ul>
-<li><p>硬盘驱动访问时间大概在ms级别，内存访问在ns级别，芯片电路大概在μm级别，</p>
-</li>
-<li><p>SATA(serial advanced technology attachment)：串行高级技术配置</p>
-</li>
-<li><p>serial ports</p>
-</li>
-<li><p>parallel ports</p>
-</li>
-<li><p>USB</p>
-</li>
-<li><p>PCI</p>
-</li>
-<li><p>NIC</p>
-</li>
-</ul>
-<hr>
-<h3 id="1-4-标准化组织"><a href="#1-4-标准化组织" class="headerlink" title="1.4 标准化组织"></a>1.4 标准化组织</h3><ul>
-<li>ISO</li>
-<li>IEEE</li>
-<li>ITU</li>
-</ul>
-<h3 id="1-5-发展历程"><a href="#1-5-发展历程" class="headerlink" title="1.5 发展历程"></a>1.5 发展历程</h3><ul>
-<li>0 机械：计算钟，帕斯卡林，差分机，穿孔制表</li>
-<li>1 真空管：ENIAC，IBM-650</li>
-<li>2 晶体管</li>
-<li>3 集成电路</li>
-<li>4 超大规模集成电路</li>
-</ul>
-<p>摩尔定律</p>
-<p>洛克定律</p>
-<h3 id="1-6-计算机层次结构"><a href="#1-6-计算机层次结构" class="headerlink" title="1.6 计算机层次结构"></a>1.6 计算机层次结构</h3><ul>
-<li>6 用户</li>
-<li>5 高级语言层</li>
-<li>4 汇编语言层</li>
-<li>3 系统软件层</li>
-<li>2 机器层（ISA）</li>
-<li>1 控制层（硬连线和微程序）</li>
-<li>0 数字逻辑层</li>
-</ul>
-<h3 id="1-7-云计算"><a href="#1-7-云计算" class="headerlink" title="1.7 云计算"></a>1.7 云计算</h3><ul>
-<li>基础设施即服务（IaaS）</li>
-<li>平台即服务（PaaS）</li>
-<li>软件即服务（SaaS）</li>
-</ul>
-<h3 id="1-8-Von-Neumann-Model"><a href="#1-8-Von-Neumann-Model" class="headerlink" title="1.8 Von Neumann Model"></a>1.8 Von Neumann Model</h3><p>冯诺伊曼模型</p>
-<ul>
-<li>CPU:ALU,control unit, pc and registers</li>
-<li>内存</li>
-<li>I&#x2F;O</li>
-</ul>
-<p>冯洛伊曼瓶颈</p>
-<p>冯洛伊曼周期：取指 译码 执行</p>
-<p>冯洛伊曼模型扩展：总线扩展</p>
-<h3 id="1-9-非冯洛伊曼模型"><a href="#1-9-非冯洛伊曼模型" class="headerlink" title="1.9 非冯洛伊曼模型"></a>1.9 非冯洛伊曼模型</h3><p>哈佛架构</p>
-<p>神经网络，细胞自动机，认知计算机，量子计算，数据流计算，并行计算机</p>
-<h1 id="第二章-计算机中的数据表示"><a href="#第二章-计算机中的数据表示" class="headerlink" title="第二章 计算机中的数据表示"></a>第二章 计算机中的数据表示</h1><h3 id="2-1-数据表示"><a href="#2-1-数据表示" class="headerlink" title="2.1 数据表示"></a>2.1 数据表示</h3><p>比特 字节 字 双字 半字节 </p>
-<h3 id="2-2-按位计数系统"><a href="#2-2-按位计数系统" class="headerlink" title="2.2 按位计数系统"></a>2.2 按位计数系统</h3><p>successful subtraction method（逐次递减法）</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622101929640.png" alt="image-20230622101929640"></p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622102624498.png" alt="image-20230622102624498"></p>
-<p>division reminder method（除留余数法）</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622102049547.png" alt="image-20230622102049547"></p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622102653132.png" alt="image-20230622102653132"></p>
-<h3 id="2-3-有符号整数的表示"><a href="#2-3-有符号整数的表示" class="headerlink" title="2.3 有符号整数的表示"></a>2.3 有符号整数的表示</h3><p>最左一位的比特为符号位（1为负）</p>
-<p>反码表示（one’s complement）</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622103232725.png" alt="image-20230622103232725"></p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622103245010.png" alt="image-20230622103245010"></p>
-<p>补码表示（two’s complement）:grin:补码加一</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622103443459.png" alt="image-20230622103443459"></p>
-<p>总结</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622103530493.png" alt="image-20230622103530493"></p>
-<h3 id="2-4-浮点数的表示"><a href="#2-4-浮点数的表示" class="headerlink" title="2.4 浮点数的表示"></a>2.4 浮点数的表示</h3><p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622103931109.png" alt="image-20230622103931109"></p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622104229468.png" alt="image-20230622104229468"></p>
-<p>单精度浮点数：1 8 23，以127为偏移</p>
-<p>双精度浮点数：1 11 52， 以1023为偏移</p>
-<h3 id="2-5-字符编码"><a href="#2-5-字符编码" class="headerlink" title="2.5 字符编码"></a>2.5 字符编码</h3><h3 id="2-6-检错与纠正"><a href="#2-6-检错与纠正" class="headerlink" title="2.6 检错与纠正"></a>2.6 检错与纠正</h3><p>CRC</p>
-<p>最小汉明距离</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622105636257.png" alt="image-20230622105636257"></p>
-<h1 id="第三章-布尔代数"><a href="#第三章-布尔代数" class="headerlink" title="第三章 布尔代数"></a>第三章 布尔代数</h1><h1 id="第四章-计算机模型MARIE"><a href="#第四章-计算机模型MARIE" class="headerlink" title="第四章 计算机模型MARIE"></a>第四章 计算机模型MARIE</h1><h3 id="4-1-介绍"><a href="#4-1-介绍" class="headerlink" title="4.1 介绍"></a>4.1 介绍</h3><h3 id="4-2-CPU基础"><a href="#4-2-CPU基础" class="headerlink" title="4.2 CPU基础"></a>4.2 CPU基础</h3><p>CPU:取指，译码，执行</p>
-<ul>
-<li>数据通路<ul>
-<li>ALU：程序执行过程中用于执行逻辑运算和算术运算</li>
-<li>寄存器：D触发器构成，一位一个；随时被CPU访问；control unit控制</li>
-</ul>
-</li>
-<li>控制单元：从存储器中读取指令，译码指令，用寄存器中的程序计算器寻找下一条要执行的指令</li>
-</ul>
-<h3 id="4-3-总线"><a href="#4-3-总线" class="headerlink" title="4.3 总线"></a>4.3 总线</h3><p>点对点总线（P2P）和多点总线</p>
-<p>数据总线、地址总线和控制总线</p>
-<p>总线仲裁</p>
-<ul>
-<li>菊花链仲裁（Daisy chain）:按优先级</li>
-<li>集中式并行（centralized parallel）：一个中央仲裁控制器仲裁</li>
-<li>自选择的分配式（self-selective）：设备自己决定谁使用</li>
-<li>冲突检测的分配式（collision-detection）：发生冲突时设备重发请求（以太网）</li>
-</ul>
-<h3 id="4-4-时钟"><a href="#4-4-时钟" class="headerlink" title="4.4 时钟"></a>4.4 时钟</h3><p>控制指令的执行速度的内部时钟</p>
-<h3 id="4-5-I-x2F-O子系统"><a href="#4-5-I-x2F-O子系统" class="headerlink" title="4.5 I&#x2F;O子系统"></a>4.5 I&#x2F;O子系统</h3><ul>
-<li>存储器映射I&#x2F;O：对于CPU来说，访问I&#x2F;O和内存没有区别，占用内存空间</li>
-<li>基于指令的I&#x2F;O：访问I&#x2F;O有特定的I&#x2F;O指令，不占用内存空间</li>
-</ul>
-<h3 id="4-6-存储器构成"><a href="#4-6-存储器构成" class="headerlink" title="4.6 存储器构成"></a>4.6 存储器构成</h3><p>内存能够以字节寻址，也能够以字寻址</p>
-<p>交叉储存器</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622141050113.png" alt="image-20230622141050113"></p>
-<ul>
-<li>低位交叉寻址</li>
-</ul>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622141126001.png" alt="image-20230622141126001"></p>
-<ul>
-<li>高位交叉寻址</li>
-</ul>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622141147276.png" alt="image-20230622141147276"></p>
-<h3 id="4-7-MARIE模型"><a href="#4-7-MARIE模型" class="headerlink" title="4.7 MARIE模型"></a>4.7 MARIE模型</h3><p>MARIE的特点</p>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622142201856.png" alt="image-20230622142201856"></p>
-<p>7个寄存器</p>
-<ul>
-<li>AC：通用寄存器，保存数据值</li>
-<li>MAR：地址</li>
-<li>MBR：数据</li>
-<li>PC：下一条指令的地址</li>
-<li>IR：下一条指令</li>
-<li>InREG</li>
-<li>OutREG</li>
-</ul>
-<p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622142922945.png" alt="image-20230622142922945"></p>
-<p>ISA的指令集架构</p>
-<ul>
-<li>MARIE有9个基本指令和6个扩展指令</li>
-<li>ISA是计算机硬件和软件中的接口</li>
-</ul>
-<h3 id="4-8-指令的执行"><a href="#4-8-指令的执行" class="headerlink" title="4.8 指令的执行"></a>4.8 指令的执行</h3><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/1687417136947.jpg.jpg" alt="1687417136947.jpg" style="zoom:50%;">
-
-<h3 id="4-9-中断"><a href="#4-9-中断" class="headerlink" title="4.9 中断"></a>4.9 中断</h3><p><img src="/2023/06/26/%E5%A4%8D%E4%B9%A0/image-20230622150746496.png" alt="image-20230622150746496"></p>
-<h3 id="4-10-一个简单的程序"><a href="#4-10-一个简单的程序" class="headerlink" title="4.10 一个简单的程序"></a>4.10 一个简单的程序</h3><h3 id="4-11-关于编译程序的讨论"><a href="#4-11-关于编译程序的讨论" class="headerlink" title="4.11 关于编译程序的讨论"></a>4.11 关于编译程序的讨论</h3><p>汇编程序&#x2F;汇编器</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/06/26/%E5%A4%8D%E4%B9%A0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -969,7 +671,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/%E5%88%86%E7%B1%BB/">
+            <a href="/categories/">
           
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
@@ -1047,6 +749,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
