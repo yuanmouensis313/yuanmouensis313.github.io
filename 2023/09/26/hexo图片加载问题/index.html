@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://example.com/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164255431.png">
 <meta property="og:image" content="http://example.com/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924164510519.png">
 <meta property="article:published_time" content="2023-09-26T06:47:41.000Z">
-<meta property="article:modified_time" content="2023-10-05T02:48:07.549Z">
+<meta property="article:modified_time" content="2023-10-05T02:51:35.762Z">
 <meta property="article:author" content="yuanmouensis">
 <meta property="article:tag" content="博客建立">
 <meta property="article:tag" content="hexo图片加载问题">
@@ -191,6 +191,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -235,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-05 10:48:07" itemprop="dateModified" datetime="2023-10-05T10:48:07+08:00">2023-10-05</time>
+                <time title="Modified: 2023-10-05 10:51:35" itemprop="dateModified" datetime="2023-10-05T10:51:35+08:00">2023-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,10 +260,10 @@
 
       
         <h1 id="1-开启post-asset-floder选项"><a href="#1-开启post-asset-floder选项" class="headerlink" title="1. 开启post_asset_floder选项"></a>1. 开启post_asset_floder选项</h1><p>在blog的根目录下，打开整个博客的配置文件，_config.yml，把其中的post_asset_floder选项改为true。</p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161033586.png" alt="image-20230924161033586"></p>
-<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161147016.png" alt="image-20230924161147016"></p>
 <span id="more"></span>	
 
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161033586.png" alt="image-20230924161033586"></p>
+<p><img src="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/image-20230924161147016.png" alt="image-20230924161147016"></p>
 <p><strong>资源文件夹</strong> (post_asset_folder) 是 Hexo 的一项功能。 具体使用方式是在 _config.yml 中修改: post_asset_folder: true 这样子修改之后，当你使用 hexo new 命令创建文件的时候，会生成一个和你的文章同名的文件夹，里面可以放一些资源文件。</p>
 <p>在后面的处理中，我们需要将我们的图片文件放到我们博客的.md的同名文件夹下。（这里先暂时不管有什么意义，因为毕竟一般不用new来创建新的.md文件）</p>
 <h1 id="2-更改typora图片的存储格式"><a href="#2-更改typora图片的存储格式" class="headerlink" title="2. 更改typora图片的存储格式"></a>2. 更改typora图片的存储格式</h1><p>​	在之前的使用中，写markdown文件时，我一般都是直接将图片粘贴过来，使用的是markdown存储图片的默认格式。在默认的模式中，我们粘贴到markdown文件中的图片都会先保存到typora的默认存储位置，然后通过引用标签和图片绝对路径来显示在markdown文件中。这样有两个坏处，</p>
@@ -288,6 +289,17 @@
     
     
     
+
+    <div>
+      
+        <div>
+
+<div style="text-align:center;color: #ccc;font-size:14px;">--------------本文结束<i class="fa fa-paw"></i>感谢您的阅读--------------</div>
+
+</div>
+
+      
+    </div>
 
       <footer class="post-footer">
           <div class="post-tags">
