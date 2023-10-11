@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="title: 机器学习入门data: 2023-10-11 22:10:19tags: [机器学习入门，机器学习模型]categories: [机器学习] 1. 概述1.1 发展 人工智能起点：1956年，达特茅斯会议。  机器学习：1980年代  深度学习：2010年代   1.2 应用场景预测，图像，NLP等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yuanmouensis313&#39;s blog">
+<meta property="og:url" content="http://example.com/2023/10/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="yuanmouensis313&#39;s blog">
+<meta property="og:description" content="title: 机器学习入门data: 2023-10-11 22:10:19tags: [机器学习入门，机器学习模型]categories: [机器学习] 1. 概述1.1 发展 人工智能起点：1956年，达特茅斯会议。  机器学习：1980年代  深度学习：2010年代   1.2 应用场景预测，图像，NLP等">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-11T14:08:40.476Z">
+<meta property="article:modified_time" content="2023-10-11T14:11:01.392Z">
+<meta property="article:author" content="yuanmouensis">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/10/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title> | yuanmouensis313's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">yuanmouensis313's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">welcome</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yuanmouensis">
+      <meta itemprop="description" content="here is yuanmouensis313's blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yuanmouensis313's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-11 22:08:40 / Modified: 22:11:01" itemprop="dateCreated datePublished" datetime="2023-10-11T22:08:40+08:00">2023-10-11</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>title: 机器学习入门<br>data: 2023-10-11 22:10:19<br>tags: [机器学习入门，机器学习模型]<br>categories: [机器学习]</p>
+<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="1-1-发展"><a href="#1-1-发展" class="headerlink" title="1.1 发展"></a>1.1 发展</h2><ul>
+<li><p>人工智能起点：1956年，达特茅斯会议。</p>
+</li>
+<li><p>机器学习：1980年代</p>
+</li>
+<li><p>深度学习：2010年代</p>
+</li>
+</ul>
+<h2 id="1-2-应用场景"><a href="#1-2-应用场景" class="headerlink" title="1.2 应用场景"></a>1.2 应用场景</h2><p>预测，图像，NLP等</p>
+<span id="more"></span>
+
+<h2 id="1-3-机器学习"><a href="#1-3-机器学习" class="headerlink" title="1.3 机器学习"></a>1.3 机器学习</h2><p>使用数学工具在数据集学习规律，应用规律解决新问题。</p>
+<p>数据集 &#x3D; 特征值 + 目标值（标签）</p>
+<p>分类：</p>
+<ul>
+<li>监督学习（有标签）<ul>
+<li>目标值为类别，离散，分类，k-近邻，贝叶斯决策树和随机森林，逻辑回归</li>
+<li>目标值连续，回归，线性回归，岭回归</li>
+</ul>
+</li>
+<li>无监督学习&#x2F;零样本学习（无标签）<ul>
+<li>聚类，k-means</li>
+</ul>
+</li>
+<li>强化学习（奖励和惩罚）</li>
+</ul>
+<h2 id="1-4-开发流程"><a href="#1-4-开发流程" class="headerlink" title="1.4 开发流程"></a>1.4 开发流程</h2><ol>
+<li>数据获取，拿到数据集</li>
+<li>数据处理</li>
+<li>构建特征，特征工程</li>
+<li>模型训练</li>
+<li>模型评估</li>
+</ol>
+<h1 id="2-数据处理"><a href="#2-数据处理" class="headerlink" title="2. 数据处理"></a>2. 数据处理</h1><h2 id="2-1-开源数据集"><a href="#2-1-开源数据集" class="headerlink" title="2.1 开源数据集"></a>2.1 开源数据集</h2><ul>
+<li>sklearn</li>
+<li>kaggle</li>
+<li>UCI</li>
+</ul>
+<h2 id="2-2-sklearn数据集"><a href="#2-2-sklearn数据集" class="headerlink" title="2.2 sklearn数据集"></a>2.2 sklearn数据集</h2><h3 id="2-2-1-sklearn数据集获取"><a href="#2-2-1-sklearn数据集获取" class="headerlink" title="2.2.1 sklearn数据集获取"></a>2.2.1 sklearn数据集获取</h3><ul>
+<li>sklearn.datasets<ul>
+<li>从该数据集中获取到我们需要的具体的数据集</li>
+<li>datasets.load_*()<ul>
+<li>获取小规模的数据集</li>
+</ul>
+</li>
+<li>datasets.fetch_*(data_home&#x3D;None)<ul>
+<li>获取大规模的数据集，一般即时从网络上下载，data_home表示数据集下载的目录，默认参数为~&#x2F;scikit_learn_data</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-2-小数据集获取"><a href="#2-2-2-小数据集获取" class="headerlink" title="2.2.2 小数据集获取"></a>2.2.2 小数据集获取</h3><ul>
+<li>sklearn.datasets.load_iris()，鸢尾花数据集</li>
+<li>sklearn.datasets.load_boston()，波士顿房价</li>
+</ul>
+<h3 id="2-2-3-大数据集获取"><a href="#2-2-3-大数据集获取" class="headerlink" title="2.2.3 大数据集获取"></a>2.2.3 大数据集获取</h3><ul>
+<li>sklearn.datasets.fetch_20newsgroups(data_home&#x3D;None, subset&#x3D;’all’)<ul>
+<li>subset，可为train, test, all，表示加载训练集，测试集或全部</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-4-数据集返回值"><a href="#2-2-4-数据集返回值" class="headerlink" title="2.2.4 数据集返回值"></a>2.2.4 数据集返回值</h3><p>load和fetch均返回的是datasets.base.Bunch（字典）</p>
+<ul>
+<li>data：数据特征数组，二维数组</li>
+<li>target：标签数组</li>
+<li>DESCR：数据描述</li>
+<li>feature_names：特征名，回归数据集是没有的</li>
+<li>target_names：标签名</li>
+</ul>
+<p>访问：dict[key]&#x3D;value or dict.ket&#x3D;value</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集获取</span></span><br><span class="line">    iris = load_iris()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;鸢尾花数据集：\n&quot;</span>, iris)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;描述&quot;</span>, iris[<span class="string">&quot;DESCR&quot;</span>])</span><br><span class="line">    <span class="built_in">print</span>(iris.data)</span><br><span class="line">    <span class="built_in">print</span>(iris.feature_names)</span><br><span class="line">    <span class="built_in">print</span>(iris.target_names)</span><br><span class="line">    <span class="built_in">print</span>(iris.target)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-5-数据集划分"><a href="#2-2-5-数据集划分" class="headerlink" title="2.2.5 数据集划分"></a>2.2.5 数据集划分</h3><p>数据集一般化为训练数据集和测试数据集，一般训练集会更大以获取更好的训练效果</p>
+<p><strong>数据集划分的api</strong></p>
+<ul>
+<li><p>sklearn.model_selection.train_test_split(arrays, *options)</p>
+<ul>
+<li>x数据集的特征值</li>
+<li>y数据集的标签值</li>
+<li>test_size 测试集的大小，一般为float，20%传0.2</li>
+<li>random_state随机数种子，不同种子采样的结果不同，相同的种子采样结果相同</li>
+<li>return 训练集特征值（x_train），测试集特征值（x_test），训练集目标值（y_trian），测试集目标值（y_test）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分数据集</span></span><br><span class="line">    x_train, x_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=<span class="number">0.2</span>, random_state=<span class="number">2</span>)</span><br><span class="line">    <span class="built_in">print</span>(x_train, x_train.shape)</span><br><span class="line">    <span class="built_in">print</span>(y_train, y_train.shape)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-3-特征工程"><a href="#2-3-特征工程" class="headerlink" title="2.3 特征工程"></a>2.3 特征工程</h2><h3 id="2-3-1-介绍"><a href="#2-3-1-介绍" class="headerlink" title="2.3.1 介绍"></a>2.3.1 介绍</h3><ul>
+<li>pandas 用于清洗数据，基本处理</li>
+<li>sklearn 提供了强大的接口处理特征</li>
+</ul>
+<h3 id="2-3-2-特征提取"><a href="#2-3-2-特征提取" class="headerlink" title="2.3.2 特征提取"></a>2.3.2 特征提取</h3><p>将数据转化为数字特征，方便计算机更好的理解数据</p>
+<ul>
+<li>字典特征提取（特征离散化）</li>
+<li>文本特征提取</li>
+<li>图像特征提取（深度学习）</li>
+</ul>
+<p><strong>API：sklearn.feature_extraction</strong></p>
+<h4 id="1-字典特征提取"><a href="#1-字典特征提取" class="headerlink" title="1. 字典特征提取"></a>1. 字典特征提取</h4><p>对字典数据进行特征值化</p>
+<p><strong>对字典中属于类别的数据转化为one-hot编码</strong></p>
+<ul>
+<li>sklearn.feature_extraction.DictVectorizer(sparse&#x3D;True,…)<ul>
+<li>DictVectorizer.fit_transform(x) x为字典类型，返回sparse矩阵（稀疏矩阵）</li>
+<li>DictVectorizer.inverse_transform(x) 上述方法的逆方法，x为数组或sparse矩阵，返回字典类型</li>
+<li>DictVectorizer.get_feature_names() 返回类别的名称</li>
+</ul>
+</li>
+</ul>
+<p>默认返回的是稀疏矩阵，可以通过sparse &#x3D; False取消</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction <span class="keyword">import</span> DictVectorizer</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dict_demo</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    字典特征提取</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    data = [&#123;<span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;beijing&#x27;</span>, <span class="string">&#x27;temperature&#x27;</span>: <span class="number">20</span>&#125;,</span><br><span class="line">            &#123;<span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;shanghai&#x27;</span>, <span class="string">&#x27;temperature&#x27;</span>: <span class="number">23</span>&#125;,</span><br><span class="line">            &#123;<span class="string">&#x27;city&#x27;</span>: <span class="string">&#x27;shenzhen&#x27;</span>, <span class="string">&#x27;temperature&#x27;</span>: <span class="number">28</span>&#125;,</span><br><span class="line">            ]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化转换器类</span></span><br><span class="line">    transfer = DictVectorizer(sparse=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    <span class="built_in">print</span>(data_new)</span><br><span class="line">    <span class="built_in">print</span>(transfer.get_feature_names_out(data))</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-文本特征提取"><a href="#2-文本特征提取" class="headerlink" title="2. 文本特征提取"></a>2. 文本特征提取</h4><h5 id="方法1：CountVectorizer"><a href="#方法1：CountVectorizer" class="headerlink" title="方法1：CountVectorizer"></a>方法1：CountVectorizer</h5><p><strong>对文本数据进行特征化</strong></p>
+<p>一般将单词、短语等作为特征基本单位</p>
+<ul>
+<li>sklearn.feature_extraction.text.CountVectorizer(stop_words&#x3D;[])：stop_words选取停用词，这些停用词删除，默认英文的停用词（i,the,a,an这些无意义的词），返回词频矩阵</li>
+<li>CountVectorizer.fit_transform(x)：以文本l列表为输入，返回sparse矩阵</li>
+<li>CountVectorizer.inverse_transform(x)：上述方法的逆方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">count_demo</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    文本特征抽取</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    data = [<span class="string">&quot;&#x27;build&#x27; not found, did you mean&quot;</span>]</span><br><span class="line"></span><br><span class="line">    transfer = CountVectorizer()</span><br><span class="line"></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(data_new.toarray())</span><br><span class="line">    <span class="built_in">print</span>(transfer.get_feature_names_out())</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">[[<span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">1</span>]]</span><br><span class="line">[<span class="string">&#x27;build&#x27;</span> <span class="string">&#x27;did&#x27;</span> <span class="string">&#x27;found&#x27;</span> <span class="string">&#x27;mean&#x27;</span> <span class="string">&#x27;not&#x27;</span> <span class="string">&#x27;you&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>中文文本特征提取</strong></p>
+<p>需要用到结巴分词</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> CountVectorizer</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">text</span>):</span><br><span class="line">    <span class="string">&quot;注意有一个空格&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">list</span>(jieba.cut(text)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">count_Chinese_demo</span>():</span><br><span class="line">    data = [<span class="string">&quot;画面曝光！乌媒：俄军坦克加装笼形格栅装甲，需更多手段才能摧毁&quot;</span>, <span class="string">&quot;没有必要嘲笑这种防护结构&quot;</span>, <span class="string">&quot;报道称，社交媒体上出现的这段视频中出现了5辆T-62坦克与1辆BTS-4 装甲抢救车 ，其中BTS-4装甲抢救车与一辆T-62坦克被笼状格栅装甲所覆盖，这种格栅装甲是为防御聚能破甲弹药而设计，对坦克形成了全方位保护&quot;</span>]</span><br><span class="line">    cut_data = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> data:</span><br><span class="line">        cut_data.append(cut_words(text))</span><br><span class="line">    <span class="comment"># print(cut_data)</span></span><br><span class="line"></span><br><span class="line">    transfer = CountVectorizer()</span><br><span class="line">    data_new = transfer.fit_transform(cut_data)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(data_new.toarray())</span><br><span class="line">    <span class="built_in">print</span>(transfer.get_feature_names_out())</span><br></pre></td></tr></table></figure>
+
+<h5 id="方法2：TfidfVectorizer"><a href="#方法2：TfidfVectorizer" class="headerlink" title="方法2：TfidfVectorizer"></a>方法2：TfidfVectorizer</h5><p>关键词：某句话中能够表征该句话特征的关键词</p>
+<p>TF-IDF主要思想：某个词或短语在一篇文章中出现概率高，而在其他的文章中出现的概率低，则该词具有很好的类别区分能力，适合用来分类。可以用来评估一个词在一篇文章或者语料库中的重要程度。</p>
+<ul>
+<li>TF（term frequency）：词频</li>
+<li>IDF（inverse document frequency）：逆向文档频率，度量一个词语的普遍重要性，IDF&#x3D;lg(总文章数&#x2F;包含该词的文章数)。</li>
+<li>TF-IDF&#x3D;TF*IDF</li>
+</ul>
+<p>API：</p>
+<ul>
+<li>sklearn.feature_extraction.text.TfidfVectorizer(stop_word&#x3D;[], …)：返回词的权重矩阵<ul>
+<li>TfidfVectorizer.fit_transform(x)：x为文本，返回sparse矩阵</li>
+<li>TfidfVectorizer.inverse_transform(x)：上述的逆方法</li>
+<li>TfidfVectorizer.get_feature_names()：返回标签列表</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cut_words</span>(<span class="params">text</span>):</span><br><span class="line">    <span class="string">&quot;注意有一个空格&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">list</span>(jieba.cut(text)))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">count_Chinese_demo</span>():</span><br><span class="line">    data = [<span class="string">&quot;画面曝光！乌媒：俄军坦克加装笼形格栅装甲，需更多手段才能摧毁&quot;</span>, <span class="string">&quot;没有必要嘲笑这种防护结构&quot;</span>, <span class="string">&quot;报道称，社交媒体上出现的这段视频中出现了5辆T-62坦克与1辆BTS-4 装甲抢救车 ，其中BTS-4装甲抢救车与一辆T-62坦克被笼状格栅装甲所覆盖，这种格栅装甲是为防御聚能破甲弹药而设计，对坦克形成了全方位保护&quot;</span>]</span><br><span class="line">    cut_data = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> text <span class="keyword">in</span> data:</span><br><span class="line">        cut_data.append(cut_words(text))</span><br><span class="line">    <span class="comment"># print(cut_data)</span></span><br><span class="line"></span><br><span class="line">    transfer = TfidfVectorizer()</span><br><span class="line">    data_new = transfer.fit_transform(cut_data)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(data_new.toarray())</span><br><span class="line">    <span class="built_in">print</span>(transfer.get_feature_names_out())</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-4-特征预处理"><a href="#2-4-特征预处理" class="headerlink" title="2.4 特征预处理"></a>2.4 特征预处理</h2><p>通过合适的转化函数<strong>将特征数据转化为更适合算法模型的数据</strong></p>
+<p>两种无量纲化（消除量纲的影响）：</p>
+<ul>
+<li>归一化</li>
+<li>标准化</li>
+</ul>
+<h3 id="2-4-1-归一化"><a href="#2-4-1-归一化" class="headerlink" title="2.4.1 归一化"></a>2.4.1 归一化</h3><p>将原始数据映射到（0,1）的范围内</p>
+<p>公式：x1 &#x3D; (x - min) &#x2F; (max - min)， x2 &#x3D; x1 *（mx - mn）+ mn，mx和mi为指定区间的值，默认mx&#x3D;1,mi&#x3D;0</p>
+<p>API：</p>
+<ul>
+<li>sklearn.preprocessing.MinMaxScaler(feature_range&#x3D;(0,1), …)<ul>
+<li>MinMaxScaler.fit_transform(x)：x为numpy array格式的数据[n_samples, n_features]，返回同样格式的归一化后的数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4-2-标准化"><a href="#2-4-2-标准化" class="headerlink" title="2.4.2 标准化"></a>2.4.2 标准化</h3><p>归一化的最大最小值选取容易受到异常值的影响，因此鲁棒性较差，适用于小数据场景</p>
+<p>标准化：将原始数据变换到均值为0，标准差为1的范围内，(x - mean) &#x2F; std</p>
+<p>API：</p>
+<ul>
+<li>sklearn.preprocessing.StandardScaler()：处理后的数据均值为0，标准差为1<ul>
+<li>StandardScaler.fit_transform(x)：x为numpy array类型数据，返回标准化后的同样形状的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5-特征降维"><a href="#2-5-特征降维" class="headerlink" title="2.5 特征降维"></a>2.5 特征降维</h2><p>降低特征向量维数，即降低特征个数，得到一组互相”不相关“的主变量的过程</p>
+<ul>
+<li>特征选择</li>
+<li>主成分分析</li>
+</ul>
+<h3 id="2-5-1-特征选择"><a href="#2-5-1-特征选择" class="headerlink" title="2.5.1 特征选择"></a>2.5.1 特征选择</h3><p>在包含冗余特征的数据中找出主要特征</p>
+<p><strong>方法</strong></p>
+<ul>
+<li>Filter：过滤式<ul>
+<li>方差选择法：过滤低方差特征（特征间差距小）</li>
+<li>相关系数：过滤相关系数大的特征（特征间相关性强）</li>
+</ul>
+</li>
+<li>Embedded：嵌入式<ul>
+<li>决策树</li>
+<li>正则化</li>
+<li>深度学习</li>
+</ul>
+</li>
+</ul>
+<p><strong>API</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sklearn.feature_selection</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-过滤式"><a href="#1-过滤式" class="headerlink" title="1. 过滤式"></a>1. 过滤式</h4><ul>
+<li><p>删除低方差特征：将方差较低的那一列特征删除</p>
+<ul>
+<li>sklearn.feature_selection.VarianceThreshold(threshold &#x3D; 0.0)：threshold默认为0.0，即将方差为0的特征删除，可以自己设定<ul>
+<li>Variance.fit_transform(x)：x为特征矩阵，返回删除低方差特征后的特征矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>皮尔逊相关系数：反应变量间相关关系的密切程度</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+
+<div style="text-align:center;color: #ccc;font-size:14px;">--------------本文结束<i class="fa fa-paw"></i>感谢您的阅读--------------</div>
+
+</div>
+
+      
+    </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/09/26/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" rel="prev" title="hexo图片加载问题">
+      <i class="fa fa-chevron-left"></i> hexo图片加载问题
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%8F%91%E5%B1%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 机器学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 开发流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">2. 数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 开源数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-sklearn%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 sklearn数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-sklearn%E6%95%B0%E6%8D%AE%E9%9B%86%E8%8E%B7%E5%8F%96"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.2.1 sklearn数据集获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-%E5%B0%8F%E6%95%B0%E6%8D%AE%E9%9B%86%E8%8E%B7%E5%8F%96"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2.2 小数据集获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9B%86%E8%8E%B7%E5%8F%96"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.2.3 大数据集获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.2.4 数据集返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-%E6%95%B0%E6%8D%AE%E9%9B%86%E5%88%92%E5%88%86"><span class="nav-number">2.2.5.</span> <span class="nav-text">2.2.5 数据集划分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 特征工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AD%97%E5%85%B8%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">1. 字典特征提取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%96%87%E6%9C%AC%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">2. 文本特征提取</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%951%EF%BC%9ACountVectorizer"><span class="nav-number">2.3.2.2.1.</span> <span class="nav-text">方法1：CountVectorizer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%96%B9%E6%B3%952%EF%BC%9ATfidfVectorizer"><span class="nav-number">2.3.2.2.2.</span> <span class="nav-text">方法2：TfidfVectorizer</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 特征预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1 归一化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 标准化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E7%89%B9%E5%BE%81%E9%99%8D%E7%BB%B4"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 特征降维</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9"><span class="nav-number">2.5.1.</span> <span class="nav-text">2.5.1 特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%BF%87%E6%BB%A4%E5%BC%8F"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">1. 过滤式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yuanmouensis</p>
+  <div class="site-description" itemprop="description">here is yuanmouensis313's blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuanmouensis</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
